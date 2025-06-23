@@ -5,6 +5,8 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
+
+$routes->options('(:any)', fn() => response(200));
 $routes->get('/', 'Home::index');
 
 $routes->get('login', 'User::login');
