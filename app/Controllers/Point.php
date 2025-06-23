@@ -57,7 +57,7 @@ class Point extends BaseController {
             'id' => $_GET['uid'],
         ];
         $user = $userModel->where($where)->find();
-        $school = $user[0]['school_name'];
+        $school = empty($user[0]['school_name'])?'':$user[0]['school_name'];
         }
 
         // 找出本月第一天
