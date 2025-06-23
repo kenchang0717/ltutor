@@ -1,0 +1,252 @@
+CRITICAL - 2025-06-19 10:01:16 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\UserModel::getUserInfo
+[Method: GET, Route: task/getExtraBonusByUser]
+in SYSTEMPATH\Model.php on line 930.
+ 1 APPPATH\Controllers\Task.php(147): CodeIgniter\Model->__call('getUserInfo', [...])
+ 2 APPPATH\Controllers\Task.php(108): App\Controllers\Task->getExtraBonus('user', 58, 500)
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Task->getExtraBonusByUser()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Task))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-19 11:31:41 --> ArgumentCountError: Too few arguments to function App\Controllers\Point::getBonusInfo(), 0 passed in C:\xampp\htdocs\ltutor\system\CodeIgniter.php on line 933 and exactly 1 expected
+[Method: GET, Route: point/getBonusInfo]
+in APPPATH\Controllers\Point.php on line 137.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Point->getBonusInfo()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Point))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-19 11:32:28 --> ArgumentCountError: Too few arguments to function App\Controllers\Point::getBonusInfo(), 0 passed in C:\xampp\htdocs\ltutor\system\CodeIgniter.php on line 933 and exactly 1 expected
+[Method: GET, Route: point/getBonusInfo]
+in APPPATH\Controllers\Point.php on line 137.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Point->getBonusInfo()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Point))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-19 11:59:01 --> Error: Cannot use object of type stdClass as array
+[Method: GET, Route: point/getBonusInfo]
+in APPPATH\Controllers\Point.php on line 153.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Point->getBonusInfo()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Point))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-19 12:01:41 --> ErrorException: Undefined array key "user_id"
+[Method: GET, Route: point/getBonusInfo]
+in APPPATH\Controllers\Point.php on line 156.
+ 1 APPPATH\Controllers\Point.php(156): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_id"', 'C:\\xampp\\htdocs\\ltutor\\app\\Controllers\\Point.php', 156)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Point->getBonusInfo()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Point))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-19 14:45:45 --> ErrorException: Undefined global variable $_SESSION
+[Method: GET, Route: point/getBonusInfo]
+in APPPATH\Filters\AuthCheck.php on line 13.
+ 1 APPPATH\Filters\AuthCheck.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\ltutor\\app\\Filters\\AuthCheck.php', 13)
+ 2 SYSTEMPATH\Filters\Filters.php(241): App\Filters\AuthCheck->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 3 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 4 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\Filters\Filters->run('point/getBonusInfo', 'before')
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-19 14:46:27 --> ErrorException: Undefined global variable $_SESSION
+[Method: GET, Route: point/getBonusInfo]
+in APPPATH\Filters\AuthCheck.php on line 13.
+ 1 APPPATH\Filters\AuthCheck.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\ltutor\\app\\Filters\\AuthCheck.php', 13)
+ 2 SYSTEMPATH\Filters\Filters.php(241): App\Filters\AuthCheck->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 3 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 4 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\Filters\Filters->run('point/getBonusInfo', 'before')
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-19 14:46:32 --> ErrorException: Undefined global variable $_SESSION
+[Method: GET, Route: point/getBonusInfo]
+in APPPATH\Filters\AuthCheck.php on line 13.
+ 1 APPPATH\Filters\AuthCheck.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\ltutor\\app\\Filters\\AuthCheck.php', 13)
+ 2 SYSTEMPATH\Filters\Filters.php(241): App\Filters\AuthCheck->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 3 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 4 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\Filters\Filters->run('point/getBonusInfo', 'before')
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-19 16:05:15 --> ErrorException: Undefined global variable $_SESSION
+[Method: GET, Route: point/getBonusInfo]
+in APPPATH\Filters\AuthCheck.php on line 13.
+ 1 APPPATH\Filters\AuthCheck.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\ltutor\\app\\Filters\\AuthCheck.php', 13)
+ 2 SYSTEMPATH\Filters\Filters.php(241): App\Filters\AuthCheck->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 3 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 4 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\Filters\Filters->run('point/getBonusInfo', 'before')
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-19 16:05:23 --> ErrorException: Undefined global variable $_SESSION
+[Method: GET, Route: point/getBonusInfo]
+in APPPATH\Filters\AuthCheck.php on line 13.
+ 1 APPPATH\Filters\AuthCheck.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\ltutor\\app\\Filters\\AuthCheck.php', 13)
+ 2 SYSTEMPATH\Filters\Filters.php(241): App\Filters\AuthCheck->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 3 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 4 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\Filters\Filters->run('point/getBonusInfo', 'before')
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-19 16:05:30 --> ErrorException: Undefined global variable $_SESSION
+[Method: GET, Route: point/getBonusInfo]
+in APPPATH\Filters\AuthCheck.php on line 13.
+ 1 APPPATH\Filters\AuthCheck.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\ltutor\\app\\Filters\\AuthCheck.php', 13)
+ 2 SYSTEMPATH\Filters\Filters.php(241): App\Filters\AuthCheck->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 3 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 4 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\Filters\Filters->run('point/getBonusInfo', 'before')
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-19 16:06:30 --> ErrorException: Undefined global variable $_SESSION
+[Method: GET, Route: point/getBonusInfo]
+in APPPATH\Filters\AuthCheck.php on line 13.
+ 1 APPPATH\Filters\AuthCheck.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', 'C:\\xampp\\htdocs\\ltutor\\app\\Filters\\AuthCheck.php', 13)
+ 2 SYSTEMPATH\Filters\Filters.php(241): App\Filters\AuthCheck->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 3 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 4 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\Filters\Filters->run('point/getBonusInfo', 'before')
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-19 16:44:14 --> ErrorException: Undefined array key "end"
+[Method: GET, Route: point/getBonusByUserByWeek]
+in APPPATH\Controllers\Point.php on line 122.
+ 1 APPPATH\Controllers\Point.php(122): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "end"', 'C:\\xampp\\htdocs\\ltutor\\app\\Controllers\\Point.php', 122)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Point->getBonusByUserByWeek()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Point))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-19 16:45:32 --> ErrorException: Undefined variable $bonus
+[Method: GET, Route: point/getBonusByUserByWeek]
+in APPPATH\Controllers\Point.php on line 130.
+ 1 APPPATH\Controllers\Point.php(130): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $bonus', 'C:\\xampp\\htdocs\\ltutor\\app\\Controllers\\Point.php', 130)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Point->getBonusByUserByWeek()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Point))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-19 17:02:58 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: point/getBonusInfo]
+in APPPATH\Controllers\Point.php on line 163.
+ 1 APPPATH\Controllers\Point.php(163): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\ltutor\\app\\Controllers\\Point.php', 163)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Point->getBonusInfo()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Point))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-19 17:12:25 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: point/getBonusInfo]
+in APPPATH\Controllers\Point.php on line 160.
+ 1 APPPATH\Controllers\Point.php(160): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\ltutor\\app\\Controllers\\Point.php', 160)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Point->getBonusInfo()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Point))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-19 17:15:05 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: point/getBonusInfo]
+in APPPATH\Controllers\Point.php on line 165.
+ 1 APPPATH\Controllers\Point.php(165): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\ltutor\\app\\Controllers\\Point.php', 165)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Point->getBonusInfo()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Point))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-19 17:16:29 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: point/getBonusInfo]
+in APPPATH\Controllers\Point.php on line 165.
+ 1 APPPATH\Controllers\Point.php(165): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\ltutor\\app\\Controllers\\Point.php', 165)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Point->getBonusInfo()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Point))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-19 17:16:31 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: point/getBonusInfo]
+in APPPATH\Controllers\Point.php on line 165.
+ 1 APPPATH\Controllers\Point.php(165): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\ltutor\\app\\Controllers\\Point.php', 165)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Point->getBonusInfo()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Point))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-19 17:17:06 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: point/getBonusInfo]
+in APPPATH\Controllers\Point.php on line 165.
+ 1 APPPATH\Controllers\Point.php(165): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\ltutor\\app\\Controllers\\Point.php', 165)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Point->getBonusInfo()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Point))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-19 17:17:09 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: point/getBonusInfo]
+in APPPATH\Controllers\Point.php on line 165.
+ 1 APPPATH\Controllers\Point.php(165): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\ltutor\\app\\Controllers\\Point.php', 165)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Point->getBonusInfo()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Point))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-19 17:17:23 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: point/getBonusInfo]
+in APPPATH\Controllers\Point.php on line 165.
+ 1 APPPATH\Controllers\Point.php(165): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\ltutor\\app\\Controllers\\Point.php', 165)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Point->getBonusInfo()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Point))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-19 17:26:13 --> Error: Cannot use a scalar value as an array
+[Method: GET, Route: point/getBonusInfo]
+in APPPATH\Controllers\Point.php on line 176.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Point->getBonusInfo()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Point))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-19 17:26:41 --> Error: Cannot use a scalar value as an array
+[Method: GET, Route: point/getBonusInfo]
+in APPPATH\Controllers\Point.php on line 176.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Point->getBonusInfo()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Point))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-19 17:26:48 --> Error: Cannot use a scalar value as an array
+[Method: GET, Route: point/getBonusInfo]
+in APPPATH\Controllers\Point.php on line 177.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Point->getBonusInfo()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Point))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

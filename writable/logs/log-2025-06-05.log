@@ -1,0 +1,198 @@
+CRITICAL - 2025-06-05 09:02:46 --> Error: Cannot call constructor
+[Method: GET, Route: test]
+in APPPATH\Controllers\Test.php on line 10.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Test->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-05 09:02:51 --> Error: Cannot call constructor
+[Method: GET, Route: test]
+in APPPATH\Controllers\Test.php on line 10.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Test->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-05 09:19:09 --> ArgumentCountError: Too few arguments to function App\Controllers\Test::register(), 0 passed in C:\xampp\htdocs\ltutor\system\CodeIgniter.php on line 933 and exactly 1 expected
+[Method: GET, Route: test/register]
+in APPPATH\Controllers\Test.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Test->register()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Test))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-05 09:19:13 --> ArgumentCountError: Too few arguments to function App\Controllers\Test::register(), 0 passed in C:\xampp\htdocs\ltutor\system\CodeIgniter.php on line 933 and exactly 1 expected
+[Method: GET, Route: test/register]
+in APPPATH\Controllers\Test.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Test->register()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Test))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-05 09:19:39 --> ArgumentCountError: Too few arguments to function App\Controllers\Test::register(), 0 passed in C:\xampp\htdocs\ltutor\system\CodeIgniter.php on line 933 and exactly 1 expected
+[Method: GET, Route: test/register]
+in APPPATH\Controllers\Test.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Test->register()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Test))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-05 09:19:46 --> ArgumentCountError: Too few arguments to function App\Controllers\Test::register(), 0 passed in C:\xampp\htdocs\ltutor\system\CodeIgniter.php on line 933 and exactly 1 expected
+[Method: GET, Route: test/register]
+in APPPATH\Controllers\Test.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Test->register()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Test))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-05 09:19:47 --> ArgumentCountError: Too few arguments to function App\Controllers\Test::register(), 0 passed in C:\xampp\htdocs\ltutor\system\CodeIgniter.php on line 933 and exactly 1 expected
+[Method: GET, Route: test/register]
+in APPPATH\Controllers\Test.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Test->register()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Test))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-05 09:19:49 --> ArgumentCountError: Too few arguments to function App\Controllers\Test::register(), 0 passed in C:\xampp\htdocs\ltutor\system\CodeIgniter.php on line 933 and exactly 1 expected
+[Method: GET, Route: test/register]
+in APPPATH\Controllers\Test.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Test->register()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Test))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-05 09:19:49 --> ArgumentCountError: Too few arguments to function App\Controllers\Test::register(), 0 passed in C:\xampp\htdocs\ltutor\system\CodeIgniter.php on line 933 and exactly 1 expected
+[Method: GET, Route: test/register]
+in APPPATH\Controllers\Test.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Test->register()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Test))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-05 09:19:50 --> ArgumentCountError: Too few arguments to function App\Controllers\Test::register(), 0 passed in C:\xampp\htdocs\ltutor\system\CodeIgniter.php on line 933 and exactly 1 expected
+[Method: GET, Route: test/register]
+in APPPATH\Controllers\Test.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Test->register()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Test))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-05 09:19:52 --> ArgumentCountError: Too few arguments to function App\Controllers\Test::register(), 0 passed in C:\xampp\htdocs\ltutor\system\CodeIgniter.php on line 933 and exactly 1 expected
+[Method: GET, Route: test/register]
+in APPPATH\Controllers\Test.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Test->register()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Test))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-05 09:19:52 --> ArgumentCountError: Too few arguments to function App\Controllers\Test::register(), 0 passed in C:\xampp\htdocs\ltutor\system\CodeIgniter.php on line 933 and exactly 1 expected
+[Method: GET, Route: test/register]
+in APPPATH\Controllers\Test.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Test->register()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Test))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-05 09:19:52 --> ArgumentCountError: Too few arguments to function App\Controllers\Test::register(), 0 passed in C:\xampp\htdocs\ltutor\system\CodeIgniter.php on line 933 and exactly 1 expected
+[Method: GET, Route: test/register]
+in APPPATH\Controllers\Test.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Test->register()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Test))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-05 09:19:52 --> ArgumentCountError: Too few arguments to function App\Controllers\Test::register(), 0 passed in C:\xampp\htdocs\ltutor\system\CodeIgniter.php on line 933 and exactly 1 expected
+[Method: GET, Route: test/register]
+in APPPATH\Controllers\Test.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Test->register()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Test))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-05 09:19:53 --> ArgumentCountError: Too few arguments to function App\Controllers\Test::register(), 0 passed in C:\xampp\htdocs\ltutor\system\CodeIgniter.php on line 933 and exactly 1 expected
+[Method: GET, Route: test/register]
+in APPPATH\Controllers\Test.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Test->register()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Test))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-05 09:19:53 --> ArgumentCountError: Too few arguments to function App\Controllers\Test::register(), 0 passed in C:\xampp\htdocs\ltutor\system\CodeIgniter.php on line 933 and exactly 1 expected
+[Method: GET, Route: test/register]
+in APPPATH\Controllers\Test.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Test->register()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Test))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-05 09:19:53 --> ArgumentCountError: Too few arguments to function App\Controllers\Test::register(), 0 passed in C:\xampp\htdocs\ltutor\system\CodeIgniter.php on line 933 and exactly 1 expected
+[Method: GET, Route: test/register]
+in APPPATH\Controllers\Test.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Test->register()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Test))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-05 09:19:53 --> ArgumentCountError: Too few arguments to function App\Controllers\Test::register(), 0 passed in C:\xampp\htdocs\ltutor\system\CodeIgniter.php on line 933 and exactly 1 expected
+[Method: GET, Route: test/register]
+in APPPATH\Controllers\Test.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Test->register()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Test))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-05 09:19:53 --> ArgumentCountError: Too few arguments to function App\Controllers\Test::register(), 0 passed in C:\xampp\htdocs\ltutor\system\CodeIgniter.php on line 933 and exactly 1 expected
+[Method: GET, Route: test/register]
+in APPPATH\Controllers\Test.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Test->register()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Test))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-05 09:19:54 --> ArgumentCountError: Too few arguments to function App\Controllers\Test::register(), 0 passed in C:\xampp\htdocs\ltutor\system\CodeIgniter.php on line 933 and exactly 1 expected
+[Method: GET, Route: test/register]
+in APPPATH\Controllers\Test.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Test->register()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Test))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-05 09:20:01 --> ArgumentCountError: Too few arguments to function App\Controllers\Test::register(), 0 passed in C:\xampp\htdocs\ltutor\system\CodeIgniter.php on line 933 and exactly 1 expected
+[Method: GET, Route: test/register]
+in APPPATH\Controllers\Test.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Test->register()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Test))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-05 09:20:10 --> ArgumentCountError: Too few arguments to function App\Controllers\Test::register(), 0 passed in C:\xampp\htdocs\ltutor\system\CodeIgniter.php on line 933 and exactly 1 expected
+[Method: GET, Route: test/register]
+in APPPATH\Controllers\Test.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Test->register()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Test))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

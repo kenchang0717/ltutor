@@ -1,0 +1,66 @@
+CRITICAL - 2025-06-17 15:38:23 --> Error: Cannot use object of type CodeIgniter\HTTP\Response as array
+[Method: GET, Route: task/getExtraBonusByUser]
+in APPPATH\Controllers\Task.php on line 94.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Task->getExtraBonusByUser()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Task))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-17 15:40:13 --> Error: Cannot use object of type CodeIgniter\HTTP\Response as array
+[Method: GET, Route: task/getExtraBonusByUser]
+in APPPATH\Controllers\Task.php on line 89.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Task->getExtraBonusByUser()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Task))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-17 15:41:39 --> Error: Cannot use object of type CodeIgniter\HTTP\Response as array
+[Method: GET, Route: task/getExtraBonusByUser]
+in APPPATH\Controllers\Task.php on line 89.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Task->getExtraBonusByUser()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Task))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-17 15:43:19 --> ErrorException: Undefined array key "start"
+[Method: GET, Route: task/getExtraBonusByUser]
+in APPPATH\Controllers\Task.php on line 89.
+ 1 APPPATH\Controllers\Task.php(89): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "start"', 'C:\\xampp\\htdocs\\ltutor\\app\\Controllers\\Task.php', 89)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Task->getExtraBonusByUser()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Task))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-17 16:07:41 --> Error: Cannot use object of type CodeIgniter\HTTP\Response as array
+[Method: GET, Route: task/getExtraBonusByUser]
+in APPPATH\Controllers\Task.php on line 93.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Task->getExtraBonusByUser()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Task))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-17 17:08:28 --> ErrorException: Undefined array key "uid"
+[Method: GET, Route: point/getBonusBySchoolByWeek]
+in APPPATH\Controllers\Point.php on line 57.
+ 1 APPPATH\Controllers\Point.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "uid"', 'C:\\xampp\\htdocs\\ltutor\\app\\Controllers\\Point.php', 57)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Point->getBonusBySchoolByWeek()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Point))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-17 17:18:35 --> TypeError: date(): Argument #2 ($timestamp) must be of type ?int, string given
+[Method: GET, Route: task/getExtraBonusByUser]
+in APPPATH\Controllers\Task.php on line 104.
+ 1 APPPATH\Controllers\Task.php(104): date('2025-06-04 12:00:00', 'Y-m-d')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Task->getExtraBonusByUser()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Task))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

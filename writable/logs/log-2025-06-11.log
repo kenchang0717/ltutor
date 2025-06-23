@@ -1,0 +1,669 @@
+CRITICAL - 2025-06-11 05:47:40 --> TypeError: CodeIgniter\Database\BaseBuilder::getOperatorFromWhereKey(): Argument #1 ($whereKey) must be of type string, int given, called in C:\xampp\htdocs\ltutor\system\Database\BaseBuilder.php on line 781
+[Method: GET, Route: task/getBonusBySchool]
+in SYSTEMPATH\Database\BaseBuilder.php on line 3495.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(781): CodeIgniter\Database\BaseBuilder->getOperatorFromWhereKey(0)
+ 2 SYSTEMPATH\Database\BaseBuilder.php(722): CodeIgniter\Database\BaseBuilder->whereHaving('QBWhere', [...], null, 'AND ', true)
+ 3 SYSTEMPATH\Model.php(928): CodeIgniter\Database\BaseBuilder->where([...])
+ 4 APPPATH\Controllers\Task.php(12): CodeIgniter\Model->__call('where', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Task->getBonusBySchool()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Task))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-11 05:48:28 --> TypeError: CodeIgniter\Database\BaseBuilder::getOperatorFromWhereKey(): Argument #1 ($whereKey) must be of type string, int given, called in C:\xampp\htdocs\ltutor\system\Database\BaseBuilder.php on line 781
+[Method: GET, Route: task/getBonusBySchool]
+in SYSTEMPATH\Database\BaseBuilder.php on line 3495.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(781): CodeIgniter\Database\BaseBuilder->getOperatorFromWhereKey(0)
+ 2 SYSTEMPATH\Database\BaseBuilder.php(722): CodeIgniter\Database\BaseBuilder->whereHaving('QBWhere', [...], null, 'AND ', true)
+ 3 SYSTEMPATH\Model.php(928): CodeIgniter\Database\BaseBuilder->where([...])
+ 4 APPPATH\Controllers\Task.php(12): CodeIgniter\Model->__call('where', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Task->getBonusBySchool()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Task))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-11 05:48:34 --> TypeError: CodeIgniter\Database\BaseBuilder::getOperatorFromWhereKey(): Argument #1 ($whereKey) must be of type string, int given, called in C:\xampp\htdocs\ltutor\system\Database\BaseBuilder.php on line 781
+[Method: GET, Route: task/getBonusBySchool]
+in SYSTEMPATH\Database\BaseBuilder.php on line 3495.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(781): CodeIgniter\Database\BaseBuilder->getOperatorFromWhereKey(0)
+ 2 SYSTEMPATH\Database\BaseBuilder.php(722): CodeIgniter\Database\BaseBuilder->whereHaving('QBWhere', [...], null, 'AND ', true)
+ 3 SYSTEMPATH\Model.php(928): CodeIgniter\Database\BaseBuilder->where([...])
+ 4 APPPATH\Controllers\Task.php(12): CodeIgniter\Model->__call('where', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Task->getBonusBySchool()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Task))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-11 05:48:36 --> TypeError: CodeIgniter\Database\BaseBuilder::getOperatorFromWhereKey(): Argument #1 ($whereKey) must be of type string, int given, called in C:\xampp\htdocs\ltutor\system\Database\BaseBuilder.php on line 781
+[Method: GET, Route: task/getBonusBySchool]
+in SYSTEMPATH\Database\BaseBuilder.php on line 3495.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(781): CodeIgniter\Database\BaseBuilder->getOperatorFromWhereKey(0)
+ 2 SYSTEMPATH\Database\BaseBuilder.php(722): CodeIgniter\Database\BaseBuilder->whereHaving('QBWhere', [...], null, 'AND ', true)
+ 3 SYSTEMPATH\Model.php(928): CodeIgniter\Database\BaseBuilder->where([...])
+ 4 APPPATH\Controllers\Task.php(12): CodeIgniter\Model->__call('where', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Task->getBonusBySchool()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Task))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-11 05:48:36 --> TypeError: CodeIgniter\Database\BaseBuilder::getOperatorFromWhereKey(): Argument #1 ($whereKey) must be of type string, int given, called in C:\xampp\htdocs\ltutor\system\Database\BaseBuilder.php on line 781
+[Method: GET, Route: task/getBonusBySchool]
+in SYSTEMPATH\Database\BaseBuilder.php on line 3495.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(781): CodeIgniter\Database\BaseBuilder->getOperatorFromWhereKey(0)
+ 2 SYSTEMPATH\Database\BaseBuilder.php(722): CodeIgniter\Database\BaseBuilder->whereHaving('QBWhere', [...], null, 'AND ', true)
+ 3 SYSTEMPATH\Model.php(928): CodeIgniter\Database\BaseBuilder->where([...])
+ 4 APPPATH\Controllers\Task.php(12): CodeIgniter\Model->__call('where', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Task->getBonusBySchool()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Task))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-11 05:48:37 --> TypeError: CodeIgniter\Database\BaseBuilder::getOperatorFromWhereKey(): Argument #1 ($whereKey) must be of type string, int given, called in C:\xampp\htdocs\ltutor\system\Database\BaseBuilder.php on line 781
+[Method: GET, Route: task/getBonusBySchool]
+in SYSTEMPATH\Database\BaseBuilder.php on line 3495.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(781): CodeIgniter\Database\BaseBuilder->getOperatorFromWhereKey(0)
+ 2 SYSTEMPATH\Database\BaseBuilder.php(722): CodeIgniter\Database\BaseBuilder->whereHaving('QBWhere', [...], null, 'AND ', true)
+ 3 SYSTEMPATH\Model.php(928): CodeIgniter\Database\BaseBuilder->where([...])
+ 4 APPPATH\Controllers\Task.php(12): CodeIgniter\Model->__call('where', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Task->getBonusBySchool()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Task))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-11 05:48:37 --> TypeError: CodeIgniter\Database\BaseBuilder::getOperatorFromWhereKey(): Argument #1 ($whereKey) must be of type string, int given, called in C:\xampp\htdocs\ltutor\system\Database\BaseBuilder.php on line 781
+[Method: GET, Route: task/getBonusBySchool]
+in SYSTEMPATH\Database\BaseBuilder.php on line 3495.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(781): CodeIgniter\Database\BaseBuilder->getOperatorFromWhereKey(0)
+ 2 SYSTEMPATH\Database\BaseBuilder.php(722): CodeIgniter\Database\BaseBuilder->whereHaving('QBWhere', [...], null, 'AND ', true)
+ 3 SYSTEMPATH\Model.php(928): CodeIgniter\Database\BaseBuilder->where([...])
+ 4 APPPATH\Controllers\Task.php(12): CodeIgniter\Model->__call('where', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Task->getBonusBySchool()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Task))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-11 05:48:37 --> TypeError: CodeIgniter\Database\BaseBuilder::getOperatorFromWhereKey(): Argument #1 ($whereKey) must be of type string, int given, called in C:\xampp\htdocs\ltutor\system\Database\BaseBuilder.php on line 781
+[Method: GET, Route: task/getBonusBySchool]
+in SYSTEMPATH\Database\BaseBuilder.php on line 3495.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(781): CodeIgniter\Database\BaseBuilder->getOperatorFromWhereKey(0)
+ 2 SYSTEMPATH\Database\BaseBuilder.php(722): CodeIgniter\Database\BaseBuilder->whereHaving('QBWhere', [...], null, 'AND ', true)
+ 3 SYSTEMPATH\Model.php(928): CodeIgniter\Database\BaseBuilder->where([...])
+ 4 APPPATH\Controllers\Task.php(12): CodeIgniter\Model->__call('where', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Task->getBonusBySchool()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Task))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-11 05:48:37 --> TypeError: CodeIgniter\Database\BaseBuilder::getOperatorFromWhereKey(): Argument #1 ($whereKey) must be of type string, int given, called in C:\xampp\htdocs\ltutor\system\Database\BaseBuilder.php on line 781
+[Method: GET, Route: task/getBonusBySchool]
+in SYSTEMPATH\Database\BaseBuilder.php on line 3495.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(781): CodeIgniter\Database\BaseBuilder->getOperatorFromWhereKey(0)
+ 2 SYSTEMPATH\Database\BaseBuilder.php(722): CodeIgniter\Database\BaseBuilder->whereHaving('QBWhere', [...], null, 'AND ', true)
+ 3 SYSTEMPATH\Model.php(928): CodeIgniter\Database\BaseBuilder->where([...])
+ 4 APPPATH\Controllers\Task.php(12): CodeIgniter\Model->__call('where', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Task->getBonusBySchool()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Task))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-11 05:48:38 --> TypeError: CodeIgniter\Database\BaseBuilder::getOperatorFromWhereKey(): Argument #1 ($whereKey) must be of type string, int given, called in C:\xampp\htdocs\ltutor\system\Database\BaseBuilder.php on line 781
+[Method: GET, Route: task/getBonusBySchool]
+in SYSTEMPATH\Database\BaseBuilder.php on line 3495.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(781): CodeIgniter\Database\BaseBuilder->getOperatorFromWhereKey(0)
+ 2 SYSTEMPATH\Database\BaseBuilder.php(722): CodeIgniter\Database\BaseBuilder->whereHaving('QBWhere', [...], null, 'AND ', true)
+ 3 SYSTEMPATH\Model.php(928): CodeIgniter\Database\BaseBuilder->where([...])
+ 4 APPPATH\Controllers\Task.php(12): CodeIgniter\Model->__call('where', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Task->getBonusBySchool()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Task))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-11 05:53:21 --> ErrorException: Array to string conversion
+[Method: GET, Route: task/getBonusBySchool]
+in VENDORPATH\predis\predis\src\Command\Command.php on line 152.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\ltutor\\vendor\\predis\\predis\\src\\Command\\Command.php', 152)
+ 2 VENDORPATH\predis\predis\src\Command\Command.php(152): strval([...])
+ 3 VENDORPATH\predis\predis\src\Connection\StreamConnection.php(234): Predis\Command\Command->serializeCommand()
+ 4 VENDORPATH\predis\predis\src\Connection\AbstractConnection.php(134): Predis\Connection\StreamConnection->writeRequest(Object(Predis\Command\Redis\SET))
+ 5 VENDORPATH\predis\predis\src\Client.php(382): Predis\Connection\AbstractConnection->executeCommand(Object(Predis\Command\Redis\SET))
+ 6 VENDORPATH\predis\predis\src\Client.php(336): Predis\Client->executeCommand(Object(Predis\Command\Redis\SET))
+ 7 APPPATH\Libraries\RedisLibrary.php(23): Predis\Client->__call('set', [...])
+ 8 APPPATH\Controllers\Task.php(20): App\Libraries\RedisLibrary->set('getBonusBySchool', [...], 86400)
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Task->getBonusBySchool()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Task))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-11 06:07:30 --> TypeError: CodeIgniter\Database\BaseBuilder::groupBy(): Argument #2 ($escape) must be of type ?bool, string given, called in C:\xampp\htdocs\ltutor\system\Model.php on line 928
+[Method: GET, Route: task/getBonusBySchool]
+in SYSTEMPATH\Database\BaseBuilder.php on line 1405.
+ 1 SYSTEMPATH\Model.php(928): CodeIgniter\Database\BaseBuilder->groupBy('user_users.school_name !=', '')
+ 2 APPPATH\Controllers\Task.php(15): CodeIgniter\Model->__call('groupBy', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Task->getBonusBySchool()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Task))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-06-11 15:05:24 --> mysqli_sql_exception: Column 'created_at' in where clause is ambiguous in C:\xampp\htdocs\ltutor\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ltutor\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `user_us...', 0)
+#1 C:\xampp\htdocs\ltutor\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `user_us...')
+#2 C:\xampp\htdocs\ltutor\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `user_us...')
+#3 C:\xampp\htdocs\ltutor\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `user_us...', Array, false)
+#4 C:\xampp\htdocs\ltutor\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ltutor\system\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\ltutor\app\Controllers\Task.php(38): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\ltutor\system\CodeIgniter.php(933): App\Controllers\Task->getBonusBySchoolLastWeek()
+#8 C:\xampp\htdocs\ltutor\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Task))
+#9 C:\xampp\htdocs\ltutor\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\ltutor\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\ltutor\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\ltutor\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-06-11 15:05:24 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'created_at' in where clause is ambiguous
+[Method: GET, Route: task/getBonusBySchoolLastWeek]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `user_users`.`school_name`, SUM(user_points_transactions.point_balance) AS BONUS
+FROM `user_users`
+LEFT JOIN `user_points_transactions` ON `user_users`.`id` = `user_points_transactions`.`user_id`
+WHERE `user_points_transactions`.`operation` = :user_points_transactions.operation:
+AND `user_users`.`school_name` != :user_users.school_name:
+AND `created_at` >= :created_at:
+AND `created_at` <= :created_at.1:
+GROUP BY `user_users`.`school_name`
+ORDER BY `BONUS` DESC
+ LIMIT 5', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Task.php(38): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Task->getBonusBySchoolLastWeek()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Task))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-11 15:05:24 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'created_at' in where clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `user_users`.`school_name`, SUM(user_points_transactions.point_balance) AS BONUS
+FROM `user_users`
+LEFT JOIN `user_points_transactions` ON `user_users`.`id` = `user_points_transactions`.`user_id`
+WHERE `user_points_transactions`.`operation` = \'ADD\'
+AND `user_users`.`school_name` != \'\'
+AND `created_at` >= \'2025-06-04 12:00:00\'
+AND `created_at` <= \'2025-06-11 11:59:59\'
+GROUP BY `user_users`.`school_name`
+ORDER BY `BONUS` DESC
+ LIMIT 5')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `user_users`.`school_name`, SUM(user_points_transactions.point_balance) AS BONUS
+FROM `user_users`
+LEFT JOIN `user_points_transactions` ON `user_users`.`id` = `user_points_transactions`.`user_id`
+WHERE `user_points_transactions`.`operation` = \'ADD\'
+AND `user_users`.`school_name` != \'\'
+AND `created_at` >= \'2025-06-04 12:00:00\'
+AND `created_at` <= \'2025-06-11 11:59:59\'
+GROUP BY `user_users`.`school_name`
+ORDER BY `BONUS` DESC
+ LIMIT 5')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `user_users`.`school_name`, SUM(user_points_transactions.point_balance) AS BONUS
+FROM `user_users`
+LEFT JOIN `user_points_transactions` ON `user_users`.`id` = `user_points_transactions`.`user_id`
+WHERE `user_points_transactions`.`operation` = :user_points_transactions.operation:
+AND `user_users`.`school_name` != :user_users.school_name:
+AND `created_at` >= :created_at:
+AND `created_at` <= :created_at.1:
+GROUP BY `user_users`.`school_name`
+ORDER BY `BONUS` DESC
+ LIMIT 5', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Task.php(38): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Task->getBonusBySchoolLastWeek()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Task))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-11 15:05:24 --> [Caused by] mysqli_sql_exception: Column 'created_at' in where clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `user_users`.`school_name`, SUM(user_points_transactions.point_balance) AS BONUS
+FROM `user_users`
+LEFT JOIN `user_points_transactions` ON `user_users`.`id` = `user_points_transactions`.`user_id`
+WHERE `user_points_transactions`.`operation` = \'ADD\'
+AND `user_users`.`school_name` != \'\'
+AND `created_at` >= \'2025-06-04 12:00:00\'
+AND `created_at` <= \'2025-06-11 11:59:59\'
+GROUP BY `user_users`.`school_name`
+ORDER BY `BONUS` DESC
+ LIMIT 5', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `user_users`.`school_name`, SUM(user_points_transactions.point_balance) AS BONUS
+FROM `user_users`
+LEFT JOIN `user_points_transactions` ON `user_users`.`id` = `user_points_transactions`.`user_id`
+WHERE `user_points_transactions`.`operation` = \'ADD\'
+AND `user_users`.`school_name` != \'\'
+AND `created_at` >= \'2025-06-04 12:00:00\'
+AND `created_at` <= \'2025-06-11 11:59:59\'
+GROUP BY `user_users`.`school_name`
+ORDER BY `BONUS` DESC
+ LIMIT 5')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `user_users`.`school_name`, SUM(user_points_transactions.point_balance) AS BONUS
+FROM `user_users`
+LEFT JOIN `user_points_transactions` ON `user_users`.`id` = `user_points_transactions`.`user_id`
+WHERE `user_points_transactions`.`operation` = \'ADD\'
+AND `user_users`.`school_name` != \'\'
+AND `created_at` >= \'2025-06-04 12:00:00\'
+AND `created_at` <= \'2025-06-11 11:59:59\'
+GROUP BY `user_users`.`school_name`
+ORDER BY `BONUS` DESC
+ LIMIT 5')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `user_users`.`school_name`, SUM(user_points_transactions.point_balance) AS BONUS
+FROM `user_users`
+LEFT JOIN `user_points_transactions` ON `user_users`.`id` = `user_points_transactions`.`user_id`
+WHERE `user_points_transactions`.`operation` = :user_points_transactions.operation:
+AND `user_users`.`school_name` != :user_users.school_name:
+AND `created_at` >= :created_at:
+AND `created_at` <= :created_at.1:
+GROUP BY `user_users`.`school_name`
+ORDER BY `BONUS` DESC
+ LIMIT 5', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Task.php(38): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Task->getBonusBySchoolLastWeek()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Task))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-11 15:24:02 --> TypeError: Cannot access offset of type string on string
+[Method: GET, Route: task/getBonusBySchoolLastWeek]
+in APPPATH\Controllers\Task.php on line 39.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Task->getBonusBySchoolLastWeek()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Task))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-11 16:36:48 --> ErrorException: Undefined array key "week"
+[Method: GET, Route: point/getBonusBySchoolByWeek]
+in APPPATH\Controllers\Point.php on line 12.
+ 1 APPPATH\Controllers\Point.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "week"', 'C:\\xampp\\htdocs\\ltutor\\app\\Controllers\\Point.php', 12)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Point->getBonusBySchoolByWeek()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Point))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-11 16:41:51 --> ErrorException: Undefined array key "week"
+[Method: GET, Route: point/getBonusBySchoolByWeek]
+in APPPATH\Controllers\Point.php on line 12.
+ 1 APPPATH\Controllers\Point.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "week"', 'C:\\xampp\\htdocs\\ltutor\\app\\Controllers\\Point.php', 12)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Point->getBonusBySchoolByWeek()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Point))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-11 16:42:34 --> ErrorException: Undefined array key "week"
+[Method: GET, Route: point/getBonusBySchoolByWeek]
+in APPPATH\Controllers\Point.php on line 13.
+ 1 APPPATH\Controllers\Point.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "week"', 'C:\\xampp\\htdocs\\ltutor\\app\\Controllers\\Point.php', 13)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Point->getBonusBySchoolByWeek()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Point))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-11 16:43:57 --> ErrorException: Undefined array key "week"
+[Method: GET, Route: point/getBonusBySchoolByWeek]
+in APPPATH\Controllers\Point.php on line 12.
+ 1 APPPATH\Controllers\Point.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "week"', 'C:\\xampp\\htdocs\\ltutor\\app\\Controllers\\Point.php', 12)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Point->getBonusBySchoolByWeek()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Point))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-11 16:45:20 --> ErrorException: Undefined array key "week"
+[Method: GET, Route: point/getBonusBySchoolByWeek]
+in APPPATH\Controllers\Point.php on line 12.
+ 1 APPPATH\Controllers\Point.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "week"', 'C:\\xampp\\htdocs\\ltutor\\app\\Controllers\\Point.php', 12)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Point->getBonusBySchoolByWeek()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Point))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-11 16:56:56 --> ErrorException: New expressions are not supported in this context
+[Method: GET, Route: point/getBonusBySchoolByWeek]
+in APPPATH\Controllers\Point.php on line 10.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+ERROR - 2025-06-11 17:16:08 --> mysqli_sql_exception: In aggregated query without GROUP BY, expression #1 of SELECT list contains nonaggregated column 'ltrust.user_users.school_name'; this is incompatible with sql_mode=only_full_group_by in C:\xampp\htdocs\ltutor\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ltutor\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `user_us...', 0)
+#1 C:\xampp\htdocs\ltutor\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `user_us...')
+#2 C:\xampp\htdocs\ltutor\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `user_us...')
+#3 C:\xampp\htdocs\ltutor\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `user_us...', Array, false)
+#4 C:\xampp\htdocs\ltutor\system\Model.php(213): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ltutor\system\BaseModel.php(613): CodeIgniter\Model->doFind(false, NULL)
+#6 C:\xampp\htdocs\ltutor\app\Controllers\Point.php(67): CodeIgniter\BaseModel->find()
+#7 C:\xampp\htdocs\ltutor\system\CodeIgniter.php(933): App\Controllers\Point->getBonusBySchoolByWeek()
+#8 C:\xampp\htdocs\ltutor\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Point))
+#9 C:\xampp\htdocs\ltutor\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\ltutor\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\ltutor\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\ltutor\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-06-11 17:16:08 --> CodeIgniter\Database\Exceptions\DatabaseException: In aggregated query without GROUP BY, expression #1 of SELECT list contains nonaggregated column 'ltrust.user_users.school_name'; this is incompatible with sql_mode=only_full_group_by
+[Method: GET, Route: point/getBonusBySchoolByWeek]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `user_users`.`school_name`, SUM(user_points_transactions.point_balance) AS BONUS
+FROM `user_users`
+LEFT JOIN `user_points_transactions` ON `user_users`.`id` = `user_points_transactions`.`user_id`
+WHERE `user_points_transactions`.`operation` = :user_points_transactions.operation:
+AND `user_users`.`school_name` != :user_users.school_name:
+AND `user_points_transactions`.`created_at` >= :user_points_transactions.created_at:
+AND `user_points_transactions`.`created_at` <= :user_points_transactions.created_at.1:', [...], false)
+ 2 SYSTEMPATH\Model.php(213): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(613): CodeIgniter\Model->doFind(false, null)
+ 4 APPPATH\Controllers\Point.php(67): CodeIgniter\BaseModel->find()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Point->getBonusBySchoolByWeek()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Point))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-11 17:16:08 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: In aggregated query without GROUP BY, expression #1 of SELECT list contains nonaggregated column 'ltrust.user_users.school_name'; this is incompatible with sql_mode=only_full_group_by
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `user_users`.`school_name`, SUM(user_points_transactions.point_balance) AS BONUS
+FROM `user_users`
+LEFT JOIN `user_points_transactions` ON `user_users`.`id` = `user_points_transactions`.`user_id`
+WHERE `user_points_transactions`.`operation` = \'ADD\'
+AND `user_users`.`school_name` != \'台北第一高中\'
+AND `user_points_transactions`.`created_at` >= \'2025-06-04 12:00:00\'
+AND `user_points_transactions`.`created_at` <= \'2025-06-11 11:59:59\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `user_users`.`school_name`, SUM(user_points_transactions.point_balance) AS BONUS
+FROM `user_users`
+LEFT JOIN `user_points_transactions` ON `user_users`.`id` = `user_points_transactions`.`user_id`
+WHERE `user_points_transactions`.`operation` = \'ADD\'
+AND `user_users`.`school_name` != \'台北第一高中\'
+AND `user_points_transactions`.`created_at` >= \'2025-06-04 12:00:00\'
+AND `user_points_transactions`.`created_at` <= \'2025-06-11 11:59:59\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `user_users`.`school_name`, SUM(user_points_transactions.point_balance) AS BONUS
+FROM `user_users`
+LEFT JOIN `user_points_transactions` ON `user_users`.`id` = `user_points_transactions`.`user_id`
+WHERE `user_points_transactions`.`operation` = :user_points_transactions.operation:
+AND `user_users`.`school_name` != :user_users.school_name:
+AND `user_points_transactions`.`created_at` >= :user_points_transactions.created_at:
+AND `user_points_transactions`.`created_at` <= :user_points_transactions.created_at.1:', [...], false)
+ 4 SYSTEMPATH\Model.php(213): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(613): CodeIgniter\Model->doFind(false, null)
+ 6 APPPATH\Controllers\Point.php(67): CodeIgniter\BaseModel->find()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Point->getBonusBySchoolByWeek()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Point))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-11 17:16:08 --> [Caused by] mysqli_sql_exception: In aggregated query without GROUP BY, expression #1 of SELECT list contains nonaggregated column 'ltrust.user_users.school_name'; this is incompatible with sql_mode=only_full_group_by
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `user_users`.`school_name`, SUM(user_points_transactions.point_balance) AS BONUS
+FROM `user_users`
+LEFT JOIN `user_points_transactions` ON `user_users`.`id` = `user_points_transactions`.`user_id`
+WHERE `user_points_transactions`.`operation` = \'ADD\'
+AND `user_users`.`school_name` != \'台北第一高中\'
+AND `user_points_transactions`.`created_at` >= \'2025-06-04 12:00:00\'
+AND `user_points_transactions`.`created_at` <= \'2025-06-11 11:59:59\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `user_users`.`school_name`, SUM(user_points_transactions.point_balance) AS BONUS
+FROM `user_users`
+LEFT JOIN `user_points_transactions` ON `user_users`.`id` = `user_points_transactions`.`user_id`
+WHERE `user_points_transactions`.`operation` = \'ADD\'
+AND `user_users`.`school_name` != \'台北第一高中\'
+AND `user_points_transactions`.`created_at` >= \'2025-06-04 12:00:00\'
+AND `user_points_transactions`.`created_at` <= \'2025-06-11 11:59:59\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `user_users`.`school_name`, SUM(user_points_transactions.point_balance) AS BONUS
+FROM `user_users`
+LEFT JOIN `user_points_transactions` ON `user_users`.`id` = `user_points_transactions`.`user_id`
+WHERE `user_points_transactions`.`operation` = \'ADD\'
+AND `user_users`.`school_name` != \'台北第一高中\'
+AND `user_points_transactions`.`created_at` >= \'2025-06-04 12:00:00\'
+AND `user_points_transactions`.`created_at` <= \'2025-06-11 11:59:59\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `user_users`.`school_name`, SUM(user_points_transactions.point_balance) AS BONUS
+FROM `user_users`
+LEFT JOIN `user_points_transactions` ON `user_users`.`id` = `user_points_transactions`.`user_id`
+WHERE `user_points_transactions`.`operation` = :user_points_transactions.operation:
+AND `user_users`.`school_name` != :user_users.school_name:
+AND `user_points_transactions`.`created_at` >= :user_points_transactions.created_at:
+AND `user_points_transactions`.`created_at` <= :user_points_transactions.created_at.1:', [...], false)
+ 5 SYSTEMPATH\Model.php(213): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(613): CodeIgniter\Model->doFind(false, null)
+ 7 APPPATH\Controllers\Point.php(67): CodeIgniter\BaseModel->find()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Point->getBonusBySchoolByWeek()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Point))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-06-11 17:17:15 --> mysqli_sql_exception: In aggregated query without GROUP BY, expression #1 of SELECT list contains nonaggregated column 'ltrust.user_users.school_name'; this is incompatible with sql_mode=only_full_group_by in C:\xampp\htdocs\ltutor\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ltutor\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `user_us...', 0)
+#1 C:\xampp\htdocs\ltutor\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `user_us...')
+#2 C:\xampp\htdocs\ltutor\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `user_us...')
+#3 C:\xampp\htdocs\ltutor\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `user_us...', Array, false)
+#4 C:\xampp\htdocs\ltutor\system\Model.php(213): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ltutor\system\BaseModel.php(613): CodeIgniter\Model->doFind(false, NULL)
+#6 C:\xampp\htdocs\ltutor\app\Controllers\Point.php(67): CodeIgniter\BaseModel->find()
+#7 C:\xampp\htdocs\ltutor\system\CodeIgniter.php(933): App\Controllers\Point->getBonusBySchoolByWeek()
+#8 C:\xampp\htdocs\ltutor\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Point))
+#9 C:\xampp\htdocs\ltutor\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\ltutor\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\ltutor\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\ltutor\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-06-11 17:17:15 --> CodeIgniter\Database\Exceptions\DatabaseException: In aggregated query without GROUP BY, expression #1 of SELECT list contains nonaggregated column 'ltrust.user_users.school_name'; this is incompatible with sql_mode=only_full_group_by
+[Method: GET, Route: point/getBonusBySchoolByWeek]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `user_users`.`school_name`, SUM(user_points_transactions.point_balance) AS BONUS
+FROM `user_users`
+LEFT JOIN `user_points_transactions` ON `user_users`.`id` = `user_points_transactions`.`user_id`
+WHERE `user_points_transactions`.`operation` = :user_points_transactions.operation:
+AND `user_users`.`school_name` != :user_users.school_name:
+AND `user_points_transactions`.`created_at` >= :user_points_transactions.created_at:
+AND `user_points_transactions`.`created_at` <= :user_points_transactions.created_at.1:', [...], false)
+ 2 SYSTEMPATH\Model.php(213): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(613): CodeIgniter\Model->doFind(false, null)
+ 4 APPPATH\Controllers\Point.php(67): CodeIgniter\BaseModel->find()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Point->getBonusBySchoolByWeek()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Point))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-11 17:17:15 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: In aggregated query without GROUP BY, expression #1 of SELECT list contains nonaggregated column 'ltrust.user_users.school_name'; this is incompatible with sql_mode=only_full_group_by
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `user_users`.`school_name`, SUM(user_points_transactions.point_balance) AS BONUS
+FROM `user_users`
+LEFT JOIN `user_points_transactions` ON `user_users`.`id` = `user_points_transactions`.`user_id`
+WHERE `user_points_transactions`.`operation` = \'ADD\'
+AND `user_users`.`school_name` != \'台北第一高中\'
+AND `user_points_transactions`.`created_at` >= \'2025-06-04 12:00:00\'
+AND `user_points_transactions`.`created_at` <= \'2025-06-11 11:59:59\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `user_users`.`school_name`, SUM(user_points_transactions.point_balance) AS BONUS
+FROM `user_users`
+LEFT JOIN `user_points_transactions` ON `user_users`.`id` = `user_points_transactions`.`user_id`
+WHERE `user_points_transactions`.`operation` = \'ADD\'
+AND `user_users`.`school_name` != \'台北第一高中\'
+AND `user_points_transactions`.`created_at` >= \'2025-06-04 12:00:00\'
+AND `user_points_transactions`.`created_at` <= \'2025-06-11 11:59:59\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `user_users`.`school_name`, SUM(user_points_transactions.point_balance) AS BONUS
+FROM `user_users`
+LEFT JOIN `user_points_transactions` ON `user_users`.`id` = `user_points_transactions`.`user_id`
+WHERE `user_points_transactions`.`operation` = :user_points_transactions.operation:
+AND `user_users`.`school_name` != :user_users.school_name:
+AND `user_points_transactions`.`created_at` >= :user_points_transactions.created_at:
+AND `user_points_transactions`.`created_at` <= :user_points_transactions.created_at.1:', [...], false)
+ 4 SYSTEMPATH\Model.php(213): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(613): CodeIgniter\Model->doFind(false, null)
+ 6 APPPATH\Controllers\Point.php(67): CodeIgniter\BaseModel->find()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Point->getBonusBySchoolByWeek()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Point))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-11 17:17:15 --> [Caused by] mysqli_sql_exception: In aggregated query without GROUP BY, expression #1 of SELECT list contains nonaggregated column 'ltrust.user_users.school_name'; this is incompatible with sql_mode=only_full_group_by
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `user_users`.`school_name`, SUM(user_points_transactions.point_balance) AS BONUS
+FROM `user_users`
+LEFT JOIN `user_points_transactions` ON `user_users`.`id` = `user_points_transactions`.`user_id`
+WHERE `user_points_transactions`.`operation` = \'ADD\'
+AND `user_users`.`school_name` != \'台北第一高中\'
+AND `user_points_transactions`.`created_at` >= \'2025-06-04 12:00:00\'
+AND `user_points_transactions`.`created_at` <= \'2025-06-11 11:59:59\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `user_users`.`school_name`, SUM(user_points_transactions.point_balance) AS BONUS
+FROM `user_users`
+LEFT JOIN `user_points_transactions` ON `user_users`.`id` = `user_points_transactions`.`user_id`
+WHERE `user_points_transactions`.`operation` = \'ADD\'
+AND `user_users`.`school_name` != \'台北第一高中\'
+AND `user_points_transactions`.`created_at` >= \'2025-06-04 12:00:00\'
+AND `user_points_transactions`.`created_at` <= \'2025-06-11 11:59:59\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `user_users`.`school_name`, SUM(user_points_transactions.point_balance) AS BONUS
+FROM `user_users`
+LEFT JOIN `user_points_transactions` ON `user_users`.`id` = `user_points_transactions`.`user_id`
+WHERE `user_points_transactions`.`operation` = \'ADD\'
+AND `user_users`.`school_name` != \'台北第一高中\'
+AND `user_points_transactions`.`created_at` >= \'2025-06-04 12:00:00\'
+AND `user_points_transactions`.`created_at` <= \'2025-06-11 11:59:59\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `user_users`.`school_name`, SUM(user_points_transactions.point_balance) AS BONUS
+FROM `user_users`
+LEFT JOIN `user_points_transactions` ON `user_users`.`id` = `user_points_transactions`.`user_id`
+WHERE `user_points_transactions`.`operation` = :user_points_transactions.operation:
+AND `user_users`.`school_name` != :user_users.school_name:
+AND `user_points_transactions`.`created_at` >= :user_points_transactions.created_at:
+AND `user_points_transactions`.`created_at` <= :user_points_transactions.created_at.1:', [...], false)
+ 5 SYSTEMPATH\Model.php(213): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(613): CodeIgniter\Model->doFind(false, null)
+ 7 APPPATH\Controllers\Point.php(67): CodeIgniter\BaseModel->find()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Point->getBonusBySchoolByWeek()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Point))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-06-11 17:24:05 --> mysqli_sql_exception: Incorrect TIMESTAMP value: '景文高中' in C:\xampp\htdocs\ltutor\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ltutor\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `user_us...', 0)
+#1 C:\xampp\htdocs\ltutor\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `user_us...')
+#2 C:\xampp\htdocs\ltutor\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `user_us...')
+#3 C:\xampp\htdocs\ltutor\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `user_us...', Array, false)
+#4 C:\xampp\htdocs\ltutor\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ltutor\system\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\ltutor\app\Controllers\Point.php(67): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\ltutor\system\CodeIgniter.php(933): App\Controllers\Point->getBonusBySchoolByWeek()
+#8 C:\xampp\htdocs\ltutor\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Point))
+#9 C:\xampp\htdocs\ltutor\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\ltutor\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\ltutor\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\ltutor\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-06-11 17:24:05 --> CodeIgniter\Database\Exceptions\DatabaseException: Incorrect TIMESTAMP value: '景文高中'
+[Method: GET, Route: point/getBonusBySchoolByWeek]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `user_users`.`school_name`, SUM(user_points_transactions.point_balance) AS BONUS
+FROM `user_users`
+LEFT JOIN `user_points_transactions` ON `user_users`.`id` = `user_points_transactions`.`user_id`
+WHERE `user_points_transactions`.`operation` = :user_points_transactions.operation:
+AND `user_users`.`school_name` = :user_users.school_name:
+AND `user_points_transactions`.`created_at` >= :user_points_transactions.created_at:
+AND `user_points_transactions`.`created_at` <= :user_points_transactions.created_at.1:', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Point.php(67): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Point->getBonusBySchoolByWeek()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Point))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-11 17:24:05 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Incorrect TIMESTAMP value: '景文高中'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `user_users`.`school_name`, SUM(user_points_transactions.point_balance) AS BONUS
+FROM `user_users`
+LEFT JOIN `user_points_transactions` ON `user_users`.`id` = `user_points_transactions`.`user_id`
+WHERE `user_points_transactions`.`operation` = \'ADD\'
+AND `user_users`.`school_name` = \'台北第一高中\'
+AND `user_points_transactions`.`created_at` >= \'景文高中\'
+AND `user_points_transactions`.`created_at` <= \'2025-06-11 11:59:59\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `user_users`.`school_name`, SUM(user_points_transactions.point_balance) AS BONUS
+FROM `user_users`
+LEFT JOIN `user_points_transactions` ON `user_users`.`id` = `user_points_transactions`.`user_id`
+WHERE `user_points_transactions`.`operation` = \'ADD\'
+AND `user_users`.`school_name` = \'台北第一高中\'
+AND `user_points_transactions`.`created_at` >= \'景文高中\'
+AND `user_points_transactions`.`created_at` <= \'2025-06-11 11:59:59\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `user_users`.`school_name`, SUM(user_points_transactions.point_balance) AS BONUS
+FROM `user_users`
+LEFT JOIN `user_points_transactions` ON `user_users`.`id` = `user_points_transactions`.`user_id`
+WHERE `user_points_transactions`.`operation` = :user_points_transactions.operation:
+AND `user_users`.`school_name` = :user_users.school_name:
+AND `user_points_transactions`.`created_at` >= :user_points_transactions.created_at:
+AND `user_points_transactions`.`created_at` <= :user_points_transactions.created_at.1:', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Point.php(67): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Point->getBonusBySchoolByWeek()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Point))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-11 17:24:05 --> [Caused by] mysqli_sql_exception: Incorrect TIMESTAMP value: '景文高中'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `user_users`.`school_name`, SUM(user_points_transactions.point_balance) AS BONUS
+FROM `user_users`
+LEFT JOIN `user_points_transactions` ON `user_users`.`id` = `user_points_transactions`.`user_id`
+WHERE `user_points_transactions`.`operation` = \'ADD\'
+AND `user_users`.`school_name` = \'台北第一高中\'
+AND `user_points_transactions`.`created_at` >= \'景文高中\'
+AND `user_points_transactions`.`created_at` <= \'2025-06-11 11:59:59\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `user_users`.`school_name`, SUM(user_points_transactions.point_balance) AS BONUS
+FROM `user_users`
+LEFT JOIN `user_points_transactions` ON `user_users`.`id` = `user_points_transactions`.`user_id`
+WHERE `user_points_transactions`.`operation` = \'ADD\'
+AND `user_users`.`school_name` = \'台北第一高中\'
+AND `user_points_transactions`.`created_at` >= \'景文高中\'
+AND `user_points_transactions`.`created_at` <= \'2025-06-11 11:59:59\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `user_users`.`school_name`, SUM(user_points_transactions.point_balance) AS BONUS
+FROM `user_users`
+LEFT JOIN `user_points_transactions` ON `user_users`.`id` = `user_points_transactions`.`user_id`
+WHERE `user_points_transactions`.`operation` = \'ADD\'
+AND `user_users`.`school_name` = \'台北第一高中\'
+AND `user_points_transactions`.`created_at` >= \'景文高中\'
+AND `user_points_transactions`.`created_at` <= \'2025-06-11 11:59:59\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `user_users`.`school_name`, SUM(user_points_transactions.point_balance) AS BONUS
+FROM `user_users`
+LEFT JOIN `user_points_transactions` ON `user_users`.`id` = `user_points_transactions`.`user_id`
+WHERE `user_points_transactions`.`operation` = :user_points_transactions.operation:
+AND `user_users`.`school_name` = :user_users.school_name:
+AND `user_points_transactions`.`created_at` >= :user_points_transactions.created_at:
+AND `user_points_transactions`.`created_at` <= :user_points_transactions.created_at.1:', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Point.php(67): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Point->getBonusBySchoolByWeek()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Point))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

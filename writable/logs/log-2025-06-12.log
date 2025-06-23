@@ -1,0 +1,30 @@
+CRITICAL - 2025-06-12 12:08:54 --> TypeError: json_decode(): Argument #1 ($json) must be of type string, array given
+[Method: GET, Route: point/getBonusByUserByWeek]
+in APPPATH\Controllers\Point.php on line 127.
+ 1 APPPATH\Controllers\Point.php(127): json_decode([...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Point->getBonusByUserByWeek()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Point))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-12 12:32:40 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\UserModel::getBonusByUserByWeek
+[Method: GET, Route: point/getBonusByUserByWeek]
+in SYSTEMPATH\Model.php on line 930.
+ 1 APPPATH\Controllers\Point.php(106): CodeIgniter\Model->__call('getBonusByUserByWeek', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Point->getBonusByUserByWeek()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Point))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-12 14:37:15 --> ErrorException: Undefined array key "uid"
+[Method: GET, Route: point/getBonusBySchoolByWeek]
+in APPPATH\Controllers\Point.php on line 47.
+ 1 APPPATH\Controllers\Point.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "uid"', 'C:\\xampp\\htdocs\\ltutor\\app\\Controllers\\Point.php', 47)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Point->getBonusBySchoolByWeek()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Point))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
