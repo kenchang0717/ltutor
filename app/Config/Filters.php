@@ -70,6 +70,7 @@ class Filters extends BaseFilters
      */
     public array $globals = [
         'before' => [
+            \App\Filters\Cors::class,
             // 'honeypot',
             // 'csrf',
             // 'invalidchars',
