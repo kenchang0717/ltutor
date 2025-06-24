@@ -7,13 +7,20 @@ use Predis\Client;
 class RedisLibrary
 {
     protected $redis;
+    public $ip = '127.0.0.1';
+    public $port = 6379;
 
     public function __construct()
     {
+        if (ENVIRONMENT === 'production') {
+            $this->ip   = '127.0.0.1';
+            $this->port = 6379;
+        }
+
         $this->redis = new Client([
             'scheme' => 'tcp',
-            'host'   => '127.0.0.1',
-            'port'   => 6379,
+            'host'   => $this->ip,
+            'port'   => $this->port,
             // 'password' => 'yourpassword' // 如果有设置密码
         ]);
     }

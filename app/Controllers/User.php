@@ -8,19 +8,19 @@ use App\Libraries\RedisLibrary;
 class User extends BaseController {
 	public function login()
     {
-        if(!isset($_GET['account']) || $_GET['account']=='')
+        if(!isset($_REQUEST['account']) || $_REQUEST['account']=='')
             return "account is empty!";
 
-        if(!isset($_GET['password']) || $_GET['password']=='')
+        if(!isset($_REQUEST['password']) || $_REQUEST['password']=='')
             return "password is empty!";
         
     	$userModel = new UserModel();
         $where = [
-            'email' => $_GET['account'],
+            'email' => $_REQUEST['account'],
         ];
         $user = $userModel->where($where)->find();
 
-        if(!password_verify($_GET['password'], $user[0]['password'])){
+        if(!password_verify($_REQUEST['password'], $user[0]['password'])){
             return "password is fail!";
         }
 
@@ -32,10 +32,6 @@ class User extends BaseController {
         ];
         $token = $jwt->generateToken($tokenData);
 
-        session()->set('isLoggedIn', 1);
-        session()->set('uid', $user[0]['id']);
-        session()->set('token', $token);
-    
         $data = [
         'status'  => true,
         'data'  => ['token' => $token,'uid' => $user[0]['id'],'name' => $user[0]['name']],
@@ -50,8 +46,6 @@ class User extends BaseController {
 
     public function logout()
     {
-        session()->destroy();
-
         $data = [
         'status'  => true,
         'data'  => '',
@@ -59,7 +53,7 @@ class User extends BaseController {
         ];
 
         $redis = new RedisLibrary();
-        $redis->delete('userToken:'.$_SESSION['uid']);
+        $redis->delete('userToken:'.$GLOBALS['uid']);
 
         return $this->response->setJSON($data);
     }

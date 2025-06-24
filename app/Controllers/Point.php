@@ -9,6 +9,7 @@ use App\Libraries\RedisLibrary;
 use CodeIgniter\I18n\Time;
 use DateInterval;
 use DatePeriod;
+use App\Libraries\JwtLibrary;
 
 class Point extends BaseController {
     private $tz;
@@ -42,7 +43,7 @@ class Point extends BaseController {
 
 	public function getBonusBySchoolByWeek()
     {
-        $week = (!isset($_GET['week']) || $_GET['week']=='')?$this->getWeekNumberOfLastWednesday():$_GET['week'];
+        $week = (!isset($_REQUEST['week']) || $_REQUEST['week']=='')?$this->getWeekNumberOfLastWednesday():$_GET['week'];
         //配合此活動
         $now = Time::now(); // 使用當前時區
         $month = $now->getMonth(); // 取得數字月份（1 到 12）
@@ -51,10 +52,10 @@ class Point extends BaseController {
             return 'week is fail';
         }
        
-        if(!isset($_GET['school']) || $_GET['school']==''){
+        if(!isset($_REQUEST['school']) || $_REQUEST['school']==''){
             $userModel = new UserModel();
             $where = [
-            'id' => $_GET['uid'],
+            'id' => $GLOBALS['uid'],
         ];
         $user = $userModel->where($where)->find();
         $school = empty($user[0]['school_name'])?'':$user[0]['school_name'];
@@ -111,10 +112,7 @@ class Point extends BaseController {
 
     public function getBonusByUserByWeek()
     {
-        if(!isset($_GET['uid']) || $_GET['uid']==''){
-            return 'uid is fail';
-        }
-        $uid = $_GET['uid'];
+        $uid = $GLOBALS['uid'];
         $time = $this->getActionDate();
 
         $num=1;
@@ -138,11 +136,7 @@ class Point extends BaseController {
 
     public function getBonusInfo()
     {
-        if(!isset($_GET['uid']) || $_GET['uid']==''){
-            return 'uid is fail';
-        }
-        $uid = $_GET['uid'];
-
+        $uid = $GLOBALS['uid'];    
         $userModel = new UserModel();
         $userInfo = $userModel->getUserInfo($uid);
 

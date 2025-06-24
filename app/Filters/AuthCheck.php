@@ -4,15 +4,21 @@ namespace App\Filters;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use CodeIgniter\Filters\FilterInterface;
+use App\Libraries\JwtLibrary;
 
 class AuthCheck implements FilterInterface
 {
     public function before(RequestInterface $request, $arguments = null)
     {
-        // 檢查使用者是否登入（假設用 session 判斷）
-        // if (!$_SESSION['isLoggedIn']) {
-        //     return '請先登入!!';
-        // }
+        if(empty($request->getHeaderLine('authorization'))){
+            return "請重新登入";
+        }else{
+            $new_str = str_replace("Bearer ","",$request->getHeaderLine('authorization'));
+            $jwt = new JwtLibrary();
+            $res = $jwt->validateToken($new_str);
+            $userData = json_decode(json_encode($res), true);
+            $GLOBALS['uid'] = $userData['data']['id'];
+        }
     }
 
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)

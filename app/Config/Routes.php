@@ -7,17 +7,18 @@ use CodeIgniter\Router\RouteCollection;
  */
 
 $routes->options('(:any)', fn() => response(200));
+$session = session();
 $routes->get('/', 'Home::index');
 
-$routes->get('login', 'User::login');
+$routes->post('login', 'User::login');
 $routes->get('logout', 'User::logout');
 $routes->get('getSchoolList', 'User::getSchoolList');
 
 $routes->get('point/getNewRecord', 'Point::getNewRecord');
 $routes->get('point/getLastWeekRecord', 'Point::getLastWeekRecord');
-$routes->get('point/getBonusBySchoolByWeek', 'Point::getBonusBySchoolByWeek');
-$routes->get('point/getBonusByUserByWeek', 'Point::getBonusByUserByWeek');
-$routes->get('point/getBonusInfo', 'Point::getBonusInfo', ['filter' => 'auth']);
+$routes->post('point/getBonusBySchoolByWeek', 'Point::getBonusBySchoolByWeek', ['filter' => 'auth:uid']);
+$routes->post('point/getBonusByUserByWeek', 'Point::getBonusByUserByWeek', ['filter' => 'auth:uid']);
+$routes->post('point/getBonusInfo', 'Point::getBonusInfo', ['filter' => 'auth:uid']);
 
 $routes->get('task/getBonusBySchoolLastWeek', 'Task::getBonusBySchoolLastWeek');
 $routes->get('task/getBonusBySchoolNow', 'Task::getBonusBySchoolNow');
