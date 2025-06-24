@@ -50,7 +50,7 @@ class Point extends BaseController {
 
         if($week>4  && $month != 8){
             $data = [
-            'status'  => true,
+            'status'  => false,
             'data'  => [],
             'message' => 'week is fail'
             ];
@@ -64,7 +64,10 @@ class Point extends BaseController {
         ];
         $user = $userModel->where($where)->find();
         $school = empty($user[0]['school_name'])?'':$user[0]['school_name'];
+        }else{
+            $school = $json['school'];
         }
+
 
         // 找出本月第一天
         $firstDay = new DateTime('first day of this month', $this->tz);
