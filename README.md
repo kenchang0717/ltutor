@@ -10,8 +10,12 @@ composer require firebase/php-jwt
 composer require predis/predis
 ```
 
-排程..每天週三中午計算
+# 排程..每天週三中午計算
 1. /task/getBonusBySchoolLastWeek 
 2. /task/getBonusBySchoolNow 
 3. /task/getExtraBonusByUser  
 4. /task/getExtraBonusBySchool
+
+# 環境參數
+- \app\Config\Database.php(調整DB)
+- env(調整REDIS)
