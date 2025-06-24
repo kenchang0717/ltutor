@@ -9,7 +9,6 @@ use App\Libraries\RedisLibrary;
 use CodeIgniter\I18n\Time;
 use DateInterval;
 use DatePeriod;
-use App\Libraries\JwtLibrary;
 
 class Point extends BaseController {
     private $tz;
@@ -43,7 +42,8 @@ class Point extends BaseController {
 
 	public function getBonusBySchoolByWeek()
     {
-        $week = (!isset($_REQUEST['week']) || $_REQUEST['week']=='')?$this->getWeekNumberOfLastWednesday():$_GET['week'];
+        $json = $this->request->getJSON(true); 
+        $week = (!isset($json['week']) || $json['week']=='')?$this->getWeekNumberOfLastWednesday():$json['week'];
         //配合此活動
         $now = Time::now(); // 使用當前時區
         $month = $now->getMonth(); // 取得數字月份（1 到 12）
@@ -52,7 +52,7 @@ class Point extends BaseController {
             return 'week is fail';
         }
        
-        if(!isset($_REQUEST['school']) || $_REQUEST['school']==''){
+        if(!isset($json['school']) || $json['school']==''){
             $userModel = new UserModel();
             $where = [
             'id' => $GLOBALS['uid'],
