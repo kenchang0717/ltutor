@@ -49,7 +49,12 @@ class Point extends BaseController {
         $month = $now->getMonth(); // 取得數字月份（1 到 12）
 
         if($week>4  && $month != 8){
-            return 'week is fail';
+            $data = [
+            'status'  => true,
+            'data'  => [],
+            'message' => 'week is fail'
+            ];
+            return $this->response->setJSON($data);
         }
        
         if(!isset($json['school']) || $json['school']==''){
