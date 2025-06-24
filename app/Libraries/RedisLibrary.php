@@ -13,8 +13,8 @@ class RedisLibrary
     public function __construct()
     {
         if (ENVIRONMENT === 'production') {
-            $this->ip   = '127.0.0.1';
-            $this->port = 6379;
+            $this->ip   = env('REDIS_IP');
+            $this->port = env('REDIS_PORT');
         }
 
         $this->redis = new Client([
