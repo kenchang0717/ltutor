@@ -8,19 +8,22 @@ use App\Libraries\RedisLibrary;
 class User extends BaseController {
 	public function login()
     {
-        if(!isset($_REQUEST['account']) || $_REQUEST['account']=='')
+        // 獲取 JSON 請求數據
+        $json = $this->request->getJSON(true); // true 表示返回關聯數組
+
+        if(!isset($json['account']) || $json['account']=='')
             return "account is empty!";
 
-        if(!isset($_REQUEST['password']) || $_REQUEST['password']=='')
+        if(!isset($json['password']) || $json['password']=='')
             return "password is empty!";
         
     	$userModel = new UserModel();
         $where = [
-            'email' => $_REQUEST['account'],
+            'email' => $json['account'],
         ];
         $user = $userModel->where($where)->find();
 
-        if(!password_verify($_REQUEST['password'], $user[0]['password'])){
+        if(!password_verify($json['password'], $user[0]['password'])){
             return "password is fail!";
         }
 
