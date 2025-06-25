@@ -11,7 +11,7 @@ class RedisLibrary
     {
         $this->redis = new Client([
             'scheme' => 'tcp',
-            'host'   => '127.0.0.1',
+            'host'   => 'redis',
             'port'   => 6379,
             // 'password' => 'yourpassword' // 如果有设置密码
         ]);
