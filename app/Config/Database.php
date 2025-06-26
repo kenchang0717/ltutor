@@ -54,9 +54,9 @@ class Database extends Config
     public array $ltutor_db = [
         'DSN'          => '',
         'hostname'     => '35.201.158.93',
-        'username'     => 'ltrust-prod',
+        'username'     => 'ltedu_dev',
         'password'     => 'QAZxsw123',
-        'database'     => 'ltrust',
+        'database'     => 'ltrust-prod',
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',
         'pConnect'     => false,
