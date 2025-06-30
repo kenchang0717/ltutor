@@ -43,7 +43,7 @@ class PointModel extends Model
             'after_points'  => $before + $bonus, 
             'point_balance'  => $bonus, 
             'type'  => 'BONUS', 
-            'transaction_type'  => 'TASK', 
+            'transaction_type'  => 'SYSTEM', 
             'operation'  => 'ADD',
             'title'  => '領取網頁活動任務獎勵',
             'description'  => $description.'任務獎勵',

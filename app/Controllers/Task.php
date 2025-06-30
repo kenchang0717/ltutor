@@ -1,6 +1,7 @@
 <?php
 namespace App\Controllers;
 
+use App\Models\UserNotificationsModel;
 use App\Models\UserChangeSchoolModel;
 use App\Models\UserModel;
 use App\Models\PointModel;
@@ -33,6 +34,7 @@ class Task extends BaseController {
         $data =$userModel->select('user_users.school_name,SUM(user_points_transactions.point_balance) AS BONUS')
                     ->join('user_points_transactions', 'user_users.id = user_points_transactions.user_id', 'left')
                     ->where('user_points_transactions.operation','ADD')
+                    ->where('user_points_transactions.transaction_type','TASK')
                     ->where('user_users.school_name !=','')
                     ->where('user_points_transactions.created_at >=', $startStr)
                     ->where('user_points_transactions.created_at <=', $endStr)
@@ -75,6 +77,7 @@ class Task extends BaseController {
         $data =$userModel->select('user_users.school_name,SUM(user_points_transactions.point_balance) AS BONUS')
                     ->join('user_points_transactions', 'user_users.id = user_points_transactions.user_id', 'left')
                     ->where('user_points_transactions.operation','ADD')
+                    ->where('user_points_transactions.transaction_type','TASK')
                     ->where('user_users.school_name !=','')
                     ->where('user_points_transactions.created_at >=', $startStr)
                     ->where('user_points_transactions.created_at <=', $endStr)
@@ -99,6 +102,7 @@ class Task extends BaseController {
         $pointModel = new PointModel();
         $data =$pointModel->select('user_id,SUM(point_balance) AS BONUS')
                     ->where('operation','ADD')
+                    ->where('transaction_type','TASK')
                     ->where('created_at >=', $date['start'])
                     ->where('created_at <=', $date['end'])
                     ->groupBy('user_id')
@@ -113,10 +117,21 @@ class Task extends BaseController {
 
         $redis = new RedisLibrary();
         $redis->set('getExtraBonusByUser:'.date('Y-m-d',strtotime($date['start'])), json_encode($all),3600*24*30*2);
+
+        $usernotificationsModel = new UserNotificationsModel();
+        $notifications['title']='恭喜完成個人組任務挑戰，已成功領取獎勵紅利！';
+        $notifications['content']='您好：
+        恭喜您完成了個人組任務挑戰，並成功領取以下獎勵：
+        紅利：[500]
+        感謝您的積極參與和努力，期待您在未來持續挑戰更多任務！
+        ';var_dump($data);
         foreach($data as $k => $v){
             $this->getExtraBonus('user',$v['user_id'],500);
+            $notifications['user_id']=$v['user_id'];
+            $usernotificationsModel->add($notifications);
+            var_dump($v['user_id']);
         }
-        
+        exit();
         return 'success';
     }
 
@@ -135,6 +150,7 @@ class Task extends BaseController {
             $data =$userModel->select('user_points_transactions.user_id,SUM(user_points_transactions.point_balance) AS BONUS')
                     ->join('user_points_transactions', 'user_users.id = user_points_transactions.user_id', 'left')
                     ->where('user_points_transactions.operation','ADD')
+                    ->where('user_points_transactions.transaction_type','TASK')
                     ->where('user_users.school_name',$v['school_name'])
                     ->where('user_points_transactions.created_at >=', $date['start'])
                     ->where('user_points_transactions.created_at <=', $date['end'])
@@ -152,14 +168,34 @@ class Task extends BaseController {
             $redis->set('getExtraBonusBySchool'.$v['school_name'].':'.date('Y-m-d',strtotime($date['start'])), json_encode($all),3600*24*30*2);
 
             foreach($data as $k => $v){
-                if($k==0)
+                if($k==0){
                     $this->getExtraBonus('school',$v['user_id'],1000);
-                elseif($k==1)
+                    $notifications['content']='您好：
+                    恭喜您完成了校際組任務挑戰，並成功領取以下獎勵：
+                    紅利：[1000]
+                    感謝您的積極參與和努力，期待您在未來持續挑戰更多任務！
+                    '; 
+                }elseif($k==1){
                     $this->getExtraBonus('school',$v['user_id'],500);
-                elseif($k==2)
+                    $notifications['content']='您好：
+                    恭喜您完成了校際組任務挑戰，並成功領取以下獎勵：
+                    紅利：[500]
+                    感謝您的積極參與和努力，期待您在未來持續挑戰更多任務！
+                    '; 
+                }elseif($k==2){
                     $this->getExtraBonus('school',$v['user_id'],100);
-                else
+                    $notifications['content']='您好：
+                    恭喜您完成了校際組任務挑戰，並成功領取以下獎勵：
+                    紅利：[100]
+                    感謝您的積極參與和努力，期待您在未來持續挑戰更多任務！
+                    '; 
+                }else
                     continue;
+
+                $usernotificationsModel = new UserNotificationsModel();
+                $notifications['title']='恭喜完成校際組任務挑戰，已成功領取獎勵紅利！';
+                $notifications['user_id']=$v['user_id'];
+                $usernotificationsModel->add($notifications);
             }
         }
         return 'success';
