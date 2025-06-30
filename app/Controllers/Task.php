@@ -124,14 +124,12 @@ class Task extends BaseController {
         恭喜您完成了個人組任務挑戰，並成功領取以下獎勵：
         紅利：[500]
         感謝您的積極參與和努力，期待您在未來持續挑戰更多任務！
-        ';var_dump($data);
+        ';
         foreach($data as $k => $v){
             $this->getExtraBonus('user',$v['user_id'],500);
             $notifications['user_id']=$v['user_id'];
             $usernotificationsModel->add($notifications);
-            var_dump($v['user_id']);
         }
-        exit();
         return 'success';
     }
 
