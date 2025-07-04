@@ -11,11 +11,23 @@ class User extends BaseController {
         // 獲取 JSON 請求數據
         $json = $this->request->getJSON(true); // true 表示返回關聯數組
 
-        if(!isset($json['account']) || $json['account']=='')
-            return "account is empty!";
+        if(!isset($json['account']) || $json['account']==''){
+            $data = [
+            'status'  => false,
+            'data'  => '',
+            'message' => '帳號為空,請重新登入!'
+            ];
+            return $data;
+        }
 
-        if(!isset($json['password']) || $json['password']=='')
-            return "password is empty!";
+        if(!isset($json['password']) || $json['password']==''){
+            $data = [
+            'status'  => false,
+            'data'  => '',
+            'message' => '密碼為空,請重新登入!'
+            ];
+            return $data;
+        }
         
     	$userModel = new UserModel();
         $where = [
@@ -24,11 +36,23 @@ class User extends BaseController {
         $user = $userModel->where($where)->find();
 
         if(!password_verify($json['password'], $user[0]['password'])){
-            return "password is fail!";
+            $data = [
+            'status'  => false,
+            'data'  => '',
+            'message' => '密碼錯誤,請重新登入!'
+            ];
+            return $data;
         }
 
-        if(!$user[0]['is_verified'])
-            return "account not verified!";
+        if(!$user[0]['is_verified']){
+            $data = [
+            'status'  => false,
+            'data'  => '',
+            'message' => '帳號未驗證,請先驗證信箱!'
+            ];
+            return $data;
+        }
+            
 
         $jwt = new JwtLibrary();
         $tokenData = [
