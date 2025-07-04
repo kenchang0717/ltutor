@@ -108,6 +108,64 @@ class Point extends BaseController {
         return $this->response->setJSON($data);
     }
 
+    public function getBonusInfo()
+    {
+        $uid = 19;    
+        $userModel = new UserModel();
+        $userInfo = $userModel->getUserInfo($uid);
+
+        if (date('w') >= 4) {
+            $lastWednesday = date('Y-m-d', strtotime('1 thursday ago'));
+        }else{
+            $lastWednesday = date('Y-m-d', strtotime('last thursday'));
+        }
+
+        $redis = new RedisLibrary();
+        $time = $this->getActionDate();
+        $num=0;
+        foreach($time as $k => $v){
+            if($num == 0)
+                $week=99;
+            else
+                $week=$num;
+
+            $uget[$week] = 0;
+            $sget[$week] = 0;
+            $slv[$week] = 0;
+            if(date('Y-m-d', strtotime($v['start'])) == $lastWednesday){//找出在活動七周內的時間
+                $ures = $redis->get('getExtraBonusByUser:'.$lastWednesday);
+                $uinfo = json_decode($ures,true);
+                if(!empty($uinfo['record'])){
+                    foreach($uinfo['record'] as $k => $v){
+                        if($v['user_id'] == $uid)//找出領取用戶比賽紅利用戶
+                            $uget[$week] = 1;
+                    }
+                }
+            
+                $sres = $redis->get('getExtraBonusBySchool'.$userInfo['school_name'].':'.$lastWednesday);
+                $sinfo = json_decode($sres,true);
+                if(!empty($sinfo['record'])){
+                    foreach($sinfo['record'] as $k => $v){
+                        if($v['user_id'] == $uid){//找出領取學校比賽紅利用戶
+                            $sget[$week] = 1;
+                            $slv[$week] = $k+1;
+                        }
+                            
+                    }
+                }
+            }
+        $num++;    
+        }
+      
+        $data = [
+        'status'  => true,
+        'data'  => ['user'=>$uget,'school'=>$sget,'schoolLV'=>$slv],
+        'message' => 'success'
+        ];
+
+        return $this->response->setJSON($data);
+    }
+
     public function getActionDate(int $num = 0)
     {
         $weeks = [];
