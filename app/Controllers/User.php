@@ -17,7 +17,7 @@ class User extends BaseController {
             'data'  => '',
             'message' => '帳號為空,請重新登入!'
             ];
-            return $data;
+            return $this->response->setJSON($data);
         }
 
         if(!isset($json['password']) || $json['password']==''){
@@ -26,7 +26,7 @@ class User extends BaseController {
             'data'  => '',
             'message' => '密碼為空,請重新登入!'
             ];
-            return $data;
+            return $this->response->setJSON($data);
         }
         
     	$userModel = new UserModel();
@@ -41,7 +41,7 @@ class User extends BaseController {
             'data'  => '',
             'message' => '密碼錯誤,請重新登入!'
             ];
-            return $data;
+            return $this->response->setJSON($data);
         }
 
         if(!$user[0]['is_verified']){
@@ -50,7 +50,7 @@ class User extends BaseController {
             'data'  => '',
             'message' => '帳號未驗證,請先驗證信箱!'
             ];
-            return $data;
+            return $this->response->setJSON($data);
         }
             
 
