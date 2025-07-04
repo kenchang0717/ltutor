@@ -27,6 +27,9 @@ class User extends BaseController {
             return "password is fail!";
         }
 
+        if(!$user[0]['is_verified'])
+            return "account not verified!";
+
         $jwt = new JwtLibrary();
         $tokenData = [
             'id' => $user[0]['id'],
