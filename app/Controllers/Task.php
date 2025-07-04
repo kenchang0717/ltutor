@@ -7,28 +7,25 @@ use App\Models\UserModel;
 use App\Models\PointModel;
 use App\Libraries\RedisLibrary;
 use DateTime;
+use DateTimeZone;
+use CodeIgniter\I18n\Time;
 
 class Task extends BaseController {
+    private $tz;
+    public function __construct() {
+        $this->tz = new DateTimeZone('Asia/Taipei');
+    }
     public function getBonusBySchoolLastWeek()
     {
-        // 現在時間
-        $now = time();
-        // 計算本週三中午（這週區間的結尾）
-        $thisWednesdayNoon = strtotime('this wednesday 12:00');
-        // 如果現在還沒到本週三中午 → 本週三是未來，取上上週為起點
-        if ($now < $thisWednesdayNoon) {
-            $thisWednesdayNoon = strtotime('last wednesday 12:00');
-        }
-        // 區間結束：本週三中午 - 1 秒
-        $end = $thisWednesdayNoon - 1;
-        // 區間起始：本週三中午 - 7 天
-        $start = strtotime('-7 days', $thisWednesdayNoon);
-        // 格式化成 MySQL datetime 格式
-        $startStr = date('Y-m-d H:i:s', $start);
-        $endStr   = date('Y-m-d H:i:s', $end);
+        $date = $this->getLastWeekBetweenDate();
 
         $userchangeschoolModel = new UserChangeSchoolModel();
-        $userList = $userchangeschoolModel->getUserChangeSchoolList($startStr,$endStr);
+        $userList = $userchangeschoolModel->getUserChangeSchoolList($date['start'],$date['end']);
+        $userListRes = json_decode($userList,true);
+        if(count($userListRes)!=0)
+            $userListdata=$userListRes;
+        else
+            $userListdata=array('0');
 
         $userModel = new UserModel();
         $data =$userModel->select('user_users.school_name,SUM(user_points_transactions.point_balance) AS BONUS')
@@ -36,42 +33,52 @@ class Task extends BaseController {
                     ->where('user_points_transactions.operation','ADD')
                     ->where('user_points_transactions.transaction_type','TASK')
                     ->where('user_users.school_name !=','')
-                    ->where('user_points_transactions.created_at >=', $startStr)
-                    ->where('user_points_transactions.created_at <=', $endStr)
-                    ->whereNotIn('user_points_transactions.user_id', json_decode($userList,true))
+                    ->where('user_points_transactions.created_at >=', $date['start'])
+                    ->where('user_points_transactions.created_at <=', $date['end'])
+                    ->whereNotIn('user_points_transactions.user_id', $userListdata)
                     ->groupBy('user_users.school_name')
                     ->orderBy('BONUS','DESC')
                     ->limit(5)
                     ->findAll();
 
         $all['record'] = $data;
-        $all['startTime'] = $startStr;
-        $all['endTime'] = $endStr;
+        $all['startTime'] = $date['start'];
+        $all['endTime'] = $date['end'];
 
         $redis = new RedisLibrary();
         $redis->set('getBonusBySchoolLastWeek', json_encode($all),3600*24*7);
+
         return 'success';
     }
 
     public function getBonusBySchoolNow()
     {
-        $now = time();
-        // 本週三中午的時間點
-        $thisWednesdayNoon = strtotime('this wednesday 12:00');
-        // 如果現在時間早於本週三中午，則使用「上週三中午」作為起點
-        if ($now < $thisWednesdayNoon) {
-            $start = strtotime('last wednesday 12:00');
+        $now = Time::now($this->tz);
+
+        // 先取得本週四中午 12:00
+        $thisThursday = Time::parse('this thursday 12:00:00', $this->tz);
+
+        // 如果現在時間早於本週四中午，代表週期是「上一個週四中午開始」
+        if ($now->isBefore($thisThursday)) {
+            $periodStart = Time::parse('last thursday 12:00:00', $this->tz);
         } else {
-            $start = $thisWednesdayNoon;
+            // 否則就是本週四中午開始
+            $periodStart = $thisThursday;
         }
-        // 區間結束為「起點 + 7 天 - 1 秒」
-        $end = strtotime('+7 days -1 second', $start);
-        // 格式化為 MySQL DATETIME 格式
-        $startStr = date('Y-m-d H:i:s', $start);
-        $endStr = date('Y-m-d H:i:s', $end);
+        $start = $periodStart->toDateTimeString();
+
+        // 週期結束 = 週期開始 + 6 天，再設定時間為 11:59:59
+        $periodEnd = clone $periodStart;
+        $periodEnd->addDays(6)->setTime(11, 59, 59);
+        $end = $periodEnd->addDays(6)->setTime(11, 59, 59)->toDateTimeString();
 
         $userchangeschoolModel = new UserChangeSchoolModel();
-        $userList = $userchangeschoolModel->getUserChangeSchoolList($startStr,$endStr);
+        $userList = $userchangeschoolModel->getUserChangeSchoolList($start,$end);
+        $userListRes = json_decode($userList,true);
+        if(count($userListRes)!=0)
+            $userListdata=$userListRes;
+        else
+            $userListdata=array('0');
 
         $userModel = new UserModel();
         $data =$userModel->select('user_users.school_name,SUM(user_points_transactions.point_balance) AS BONUS')
@@ -79,17 +86,17 @@ class Task extends BaseController {
                     ->where('user_points_transactions.operation','ADD')
                     ->where('user_points_transactions.transaction_type','TASK')
                     ->where('user_users.school_name !=','')
-                    ->where('user_points_transactions.created_at >=', $startStr)
-                    ->where('user_points_transactions.created_at <=', $endStr)
-                    ->whereNotIn('user_points_transactions.user_id', json_decode($userList,true))
+                    ->where('user_points_transactions.created_at >=', $start)
+                    ->where('user_points_transactions.created_at <=', $end)
+                    ->whereNotIn('user_points_transactions.user_id', $userListdata)
                     ->groupBy('user_users.school_name')
                     ->orderBy('BONUS','DESC')
                     ->limit(5)
                     ->findAll();
 
         $all['record'] = $data;
-        $all['startTime'] = $startStr;
-        $all['endTime'] = $endStr;
+        $all['startTime'] = $start;
+        $all['endTime'] = $end;
 
         $redis = new RedisLibrary();
         $redis->set('getBonusBySchoolNow', json_encode($all),3600*24);
@@ -215,27 +222,23 @@ class Task extends BaseController {
     }
 
     public function getLastWeekBetweenDate(){
-        // 現在的時間
-        $now = new DateTime();
+        $now = Time::now($this->tz);
+        // 本週四中午
+        $thisThursday = Time::parse('this thursday 12:00:00', $this->tz);
 
-        // 找出這週三
-        $thisWednesday = clone $now;
-        $thisWednesday->modify('this week wednesday 12:00:00');
-
-        // 若今天已經是週三中午後，則保留本週三；否則推到下週
-        if ($now >= $thisWednesday) {
-            $end = $thisWednesday;
-        } else {
-            $thisWednesday->modify('-7 days');
-            $end = clone $thisWednesday;
+        // 如果今天還沒到週四中午，表示我們還在「上週」區間中
+        if ($now->isBefore($thisThursday)) {
+            $thisThursday = Time::parse('last thursday 12:00:00', $this->tz);
         }
 
-        // 上週三中午 = 這週三中午 - 7 天
-        $start = clone $end;
-        $start->modify('-7 days');
+        // 上週四 = 本週四 - 7 天
+        $start = Time::parse($thisThursday->toDateTimeString(),$this->tz)->subDays(7)->toDateTimeString();
 
-        $date['start'] = $start->format('Y-m-d 12:00:00');
-        $date['end'] = $end->format('Y-m-d 11:59:59');
+        // 本週三中午 11:59:59 = 本週四 - 1 天 + 設定時間
+        $end = Time::parse($thisThursday->toDateTimeString(), $this->tz)->subDays(1)->setTime(11, 59, 59)->toDateTimeString();
+
+        $date['start'] = $start;
+        $date['end'] = $end;
 
         return $date;
     }
