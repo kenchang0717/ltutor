@@ -8,11 +8,11 @@ use CodeIgniter\Router\RouteCollection;
 
 $routes->options('(:any)', fn() => response(200));
 $session = session();
-$routes->get('/', 'Home::index');
+$routes->post('/', 'Home::index');
 
 $routes->post('login', 'User::login');
-$routes->get('logout', 'User::logout');
 $routes->get('getSchoolList', 'User::getSchoolList');
+$routes->post('getToken', 'User::getToken');
 
 $routes->get('point/getNewRecord', 'Point::getNewRecord');
 $routes->get('point/getLastWeekRecord', 'Point::getLastWeekRecord');
@@ -24,3 +24,4 @@ $routes->get('task/getBonusBySchoolLastWeek', 'Task::getBonusBySchoolLastWeek');
 $routes->get('task/getBonusBySchoolNow', 'Task::getBonusBySchoolNow');
 $routes->get('task/getExtraBonusByUser', 'Task::getExtraBonusByUser');
 $routes->get('task/getExtraBonusBySchool', 'Task::getExtraBonusBySchool');
+

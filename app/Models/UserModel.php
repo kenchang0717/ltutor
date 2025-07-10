@@ -74,6 +74,15 @@ class UserModel extends Model
         return $data[0];
     }
 
+    public function getUid(string $email)
+    {
+        $data = $this->select('id')
+                    ->where('email', $email)
+                    ->find();
+           
+        return $data[0]['id'];
+    }
+
     public function getSchoolList()
     {
         $data = $this->distinct()

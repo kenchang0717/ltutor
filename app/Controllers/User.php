@@ -68,24 +68,37 @@ class User extends BaseController {
         'message' => 'success'
         ];
 
-        $redis = new RedisLibrary();
-        $redis->set('userToken:'.$user[0]['id'], $token,3600*24);
+        // $redis = new RedisLibrary();
+        // $redis->set('userToken:'.$user[0]['id'], $token,3600*24);
 
         return $this->response->setJSON($data);
     }
 
-    public function logout()
+    public function getToken()
     {
-        $data = [
-        'status'  => true,
-        'data'  => '',
-        'message' => 'success'
+        // $data = [
+        //     'vendorClientId' => $_POST['vendorClientId'],
+        //     'userToken' => $_POST['userToken'],
+        // ];
+
+        $data = $this->getUserInfo($_POST['userToken']);
+        $userData = json_decode($data, true);
+
+        $userModel = new UserModel();
+        $uid = $userModel->getUid($userData['data']['email']);
+
+        $jwt = new JwtLibrary();
+        $tokenData = [
+            'id' => $uid,
+            'email' => $userData['data']['email'],
+            'name' => $userData['data']['name'],
         ];
+        $token = $jwt->generateToken($tokenData);
 
-        $redis = new RedisLibrary();
-        $redis->delete('userToken:'.$GLOBALS['uid']);
+        $url = "https://25bta.ltrust.tw/?uid=".$uid."&token=$token";
 
-        return $this->response->setJSON($data);
+        header("Refresh: 3; url=$url");
+        exit;
     }
 
     public function getSchoolList()
@@ -98,5 +111,39 @@ class User extends BaseController {
         'message' => 'success'
         ];
         return $this->response->setJSON($data);
+    }
+
+    public function getUserInfo(string $userToken)
+    {
+        $apiUrl = 'https://vendor.ltrust.tw/api/vendor/user/info';  
+        $clientId = '4a4da231-c514-47d2-93f6-7be70c770a84';  
+        $key = '65f8591f2edb818cb67b3b31713d6e16';            
+        $token = $userToken;            
+
+        $ch = curl_init();
+
+        curl_setopt($ch, CURLOPT_URL, $apiUrl);             
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, [
+            "x-client-id: $clientId",
+            "x-apikey: $key",
+            "x-user-token: $token",
+        ]);
+
+        $response = curl_exec($ch);
+
+        if (curl_errno($ch)) {
+            // echo 'cURL 錯誤: ' . curl_error($ch);
+
+            return curl_error($ch);
+        } else {
+            $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+            // echo "HTTP 狀態碼: $httpCode\n";
+            // echo "回應內容:\n$response";
+
+            return $response;
+        }
+
+        curl_close($ch);
     }
 }

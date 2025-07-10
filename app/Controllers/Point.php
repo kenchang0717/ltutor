@@ -110,7 +110,7 @@ class Point extends BaseController {
 
     public function getBonusInfo()
     {
-        $uid = 19;    
+        $uid = $GLOBALS['uid'];    
         $userModel = new UserModel();
         $userInfo = $userModel->getUserInfo($uid);
 
