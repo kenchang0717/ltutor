@@ -110,14 +110,14 @@ class Point extends BaseController {
 
     public function getBonusInfo()
     {
-        $uid = $GLOBALS['uid'];    
+        $uid = $GLOBALS['uid'];       
         $userModel = new UserModel();
         $userInfo = $userModel->getUserInfo($uid);
 
         if (date('w') >= 4) {
-            $lastWednesday = date('Y-m-d', strtotime('1 thursday ago'));
+            $lastThursday = date('Y-m-d', strtotime('1 thursday ago'));
         }else{
-            $lastWednesday = date('Y-m-d', strtotime('last thursday'));
+            $lastThursday = date('Y-m-d', strtotime('last thursday'));
         }
 
         $redis = new RedisLibrary();
@@ -132,8 +132,8 @@ class Point extends BaseController {
             $uget[$week] = 0;
             $sget[$week] = 0;
             $slv[$week] = 0;
-            if(date('Y-m-d', strtotime($v['start'])) == $lastWednesday){//找出在活動七周內的時間
-                $ures = $redis->get('getExtraBonusByUser:'.$lastWednesday);
+            if(date('Y-m-d', strtotime($v['start'])) == $lastThursday){//找出在活動七周內的時間
+                $ures = $redis->get('getExtraBonusByUser:'.$lastThursday);
                 $uinfo = json_decode($ures,true);
                 if(!empty($uinfo['record'])){
                     foreach($uinfo['record'] as $k => $v){
@@ -142,7 +142,7 @@ class Point extends BaseController {
                     }
                 }
             
-                $sres = $redis->get('getExtraBonusBySchool'.$userInfo['school_name'].':'.$lastWednesday);
+                $sres = $redis->get('getExtraBonusBySchool'.$userInfo['school_name'].':'.$lastThursday);
                 $sinfo = json_decode($sres,true);
                 if(!empty($sinfo['record'])){
                     foreach($sinfo['record'] as $k => $v){

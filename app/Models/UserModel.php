@@ -3,36 +3,41 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 use Config\Database;
+use CodeIgniter\I18n\Time;
 
 class UserModel extends Model
 {
     protected $table      = 'user_users';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['bonus_points']; // 可插入欄位
+    protected $allowedFields = ['bonus_points','updated_at']; // 可插入欄位
     protected $useTimestamps = true;       // 如果表中有 created_at / updated_at 欄位
 
     public function getBonusBySchoolByWeek(string $school,string $startStr,string $endStr)
     {
-        $data = $this->select('user_users.school_name,SUM(user_points_transactions.point_balance) AS BONUS')
+        $data = $this->select('user_users.school_name,SUM(user_points_transactions.point) AS BONUS')
                     ->join('user_points_transactions', 'user_users.id = user_points_transactions.user_id', 'left')
                     ->where('user_points_transactions.operation','ADD')
                     ->where('user_points_transactions.transaction_type','TASK')
                     ->where('user_users.school_name', $school)
-                    ->where('user_points_transactions.created_at >=', $startStr)
-                    ->where('user_points_transactions.created_at <=', $endStr)
+                    ->where("CONVERT_TZ(user_points_transactions.created_at, '+00:00', '+08:00') >=", $startStr)
+                    ->where("CONVERT_TZ(user_points_transactions.created_at, '+00:00', '+08:00') <=", $endStr)
+                    // ->where('user_points_transactions.created_at >=', $startStr)
+                    // ->where('user_points_transactions.created_at <=', $endStr)
                     ->findAll();
         return $data;
     }
 
     public function getBonusByUserByWeek(int $uid,string $startStr,string $endStr)
     {
-        $data = $this->select('SUM(user_points_transactions.point_balance) AS BONUS')
+        $data = $this->select('SUM(user_points_transactions.point) AS BONUS')
                     ->join('user_points_transactions', 'user_users.id = user_points_transactions.user_id', 'left')
                     ->where('user_points_transactions.operation','ADD')
                     ->where('user_points_transactions.transaction_type','TASK')
                     ->where('user_users.id', $uid)
-                    ->where('user_points_transactions.created_at >=', $startStr)
-                    ->where('user_points_transactions.created_at <=', $endStr)
+                    ->where("CONVERT_TZ(user_points_transactions.created_at, '+00:00', '+08:00') >=", $startStr)
+                    ->where("CONVERT_TZ(user_points_transactions.created_at, '+00:00', '+08:00') <=", $endStr)
+                    // ->where('user_points_transactions.created_at >=', $startStr)
+                    // ->where('user_points_transactions.created_at <=', $endStr)
                     ->find();
         return $data[0];
     }
@@ -45,8 +50,11 @@ class UserModel extends Model
         $db->transBegin();
         try {
 
+            $utcNow = Time::now('UTC')->toDateTimeString();
+
             $data = [
             'bonus_points' => $bonus + $before,
+            'updated_at' => $utcNow,
         ];
             $this->update($uid,$data);
 

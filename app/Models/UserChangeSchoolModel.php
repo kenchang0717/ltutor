@@ -12,8 +12,10 @@ class UserChangeSchoolModel extends Model
     public function getUserChangeSchoolList(string $start,string $end)
     {
         $res = $this->select('user_id')
-                    ->where('created_at >=', $start)
-                    ->where('created_at <=', $end)
+                    ->where("CONVERT_TZ(created_at, '+00:00', '+08:00') >=", $start)
+                    ->where("CONVERT_TZ(created_at, '+00:00', '+08:00') <=", $end)
+                    // ->where('created_at >=', $start)
+                    // ->where('created_at <=', $end)
                     ->findAll();
         $data = array_column($res, 'user_id');
         $list = json_encode($data);

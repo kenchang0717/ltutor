@@ -28,13 +28,15 @@ class Task extends BaseController {
             $userListdata=array('0');
 
         $userModel = new UserModel();
-        $data =$userModel->select('user_users.school_name,SUM(user_points_transactions.point_balance) AS BONUS')
+        $data =$userModel->select('user_users.school_name,SUM(user_points_transactions.point) AS BONUS')
                     ->join('user_points_transactions', 'user_users.id = user_points_transactions.user_id', 'left')
                     ->where('user_points_transactions.operation','ADD')
                     ->where('user_points_transactions.transaction_type','TASK')
                     ->where('user_users.school_name !=','')
-                    ->where('user_points_transactions.created_at >=', $date['start'])
-                    ->where('user_points_transactions.created_at <=', $date['end'])
+                    ->where("CONVERT_TZ(user_points_transactions.created_at, '+00:00', '+08:00') >=", $date['start'])
+                    ->where("CONVERT_TZ(user_points_transactions.created_at, '+00:00', '+08:00') <=", $date['end'])
+                    // ->where('user_points_transactions.created_at >=', $date['start'])
+                    // ->where('user_points_transactions.created_at <=', $date['end'])
                     ->whereNotIn('user_points_transactions.user_id', $userListdata)
                     ->groupBy('user_users.school_name')
                     ->orderBy('BONUS','DESC')
@@ -81,13 +83,15 @@ class Task extends BaseController {
             $userListdata=array('0');
 
         $userModel = new UserModel();
-        $data =$userModel->select('user_users.school_name,SUM(user_points_transactions.point_balance) AS BONUS')
+        $data =$userModel->select('user_users.school_name,SUM(user_points_transactions.point) AS BONUS')
                     ->join('user_points_transactions', 'user_users.id = user_points_transactions.user_id', 'left')
                     ->where('user_points_transactions.operation','ADD')
                     ->where('user_points_transactions.transaction_type','TASK')
                     ->where('user_users.school_name !=','')
-                    ->where('user_points_transactions.created_at >=', $start)
-                    ->where('user_points_transactions.created_at <=', $end)
+                    ->where("CONVERT_TZ(user_points_transactions.created_at, '+00:00', '+08:00') >=", $start)
+                    ->where("CONVERT_TZ(user_points_transactions.created_at, '+00:00', '+08:00') <=", $end)
+                    // ->where('user_points_transactions.created_at >=', $start)
+                    // ->where('user_points_transactions.created_at <=', $end)
                     ->whereNotIn('user_points_transactions.user_id', $userListdata)
                     ->groupBy('user_users.school_name')
                     ->orderBy('BONUS','DESC')
@@ -107,11 +111,13 @@ class Task extends BaseController {
     {
         $date = $this->getLastWeekBetweenDate();
         $pointModel = new PointModel();
-        $data =$pointModel->select('user_id,SUM(point_balance) AS BONUS')
+        $data =$pointModel->select('user_id,SUM(point) AS BONUS')
                     ->where('operation','ADD')
                     ->where('transaction_type','TASK')
-                    ->where('created_at >=', $date['start'])
-                    ->where('created_at <=', $date['end'])
+                    ->where("CONVERT_TZ(created_at, '+00:00', '+08:00') >=", $date['start'])
+                    ->where("CONVERT_TZ(created_at, '+00:00', '+08:00') <=", $date['end'])
+                    // ->where('created_at >=', $date['start'])
+                    // ->where('created_at <=', $date['end'])
                     ->groupBy('user_id')
                     ->having('BONUS >=',500)
                     ->orderBy('BONUS','DESC')
@@ -149,17 +155,24 @@ class Task extends BaseController {
 
         $userchangeschoolModel = new UserChangeSchoolModel();
         $userList = $userchangeschoolModel->getUserChangeSchoolList($date['start'],$date['end']);
+        $userListRes = json_decode($userList,true);
+        if(count($userListRes)!=0)
+            $userListdata=$userListRes;
+        else
+            $userListdata=array('0');
 
         
         foreach($list as $k => $v){
-            $data =$userModel->select('user_points_transactions.user_id,SUM(user_points_transactions.point_balance) AS BONUS')
+            $data =$userModel->select('user_points_transactions.user_id,SUM(user_points_transactions.point) AS BONUS')
                     ->join('user_points_transactions', 'user_users.id = user_points_transactions.user_id', 'left')
                     ->where('user_points_transactions.operation','ADD')
                     ->where('user_points_transactions.transaction_type','TASK')
                     ->where('user_users.school_name',$v['school_name'])
-                    ->where('user_points_transactions.created_at >=', $date['start'])
-                    ->where('user_points_transactions.created_at <=', $date['end'])
-                    ->whereNotIn('user_points_transactions.user_id', json_decode($userList,true))
+                    ->where("CONVERT_TZ(user_points_transactions.created_at, '+00:00', '+08:00') >=", $date['start'])
+                    ->where("CONVERT_TZ(user_points_transactions.created_at, '+00:00', '+08:00') <=", $date['end'])
+                    // ->where('user_points_transactions.created_at >=', $date['start'])
+                    // ->where('user_points_transactions.created_at <=', $date['end'])
+                    ->whereNotIn('user_points_transactions.user_id', $userListdata)
                     ->groupBy('user_points_transactions.user_id')
                     ->orderBy('BONUS','DESC')
                     ->limit(3)
@@ -241,6 +254,15 @@ class Task extends BaseController {
         $date['end'] = $end;
 
         return $date;
+    }
+
+    public function test(){
+        $now = Time::now($this->tz);
+
+        $redis = new RedisLibrary();
+        $redis->set('CRON_WORK_'.$now ,'',3600*24);
+
+        return 'success';
     }
 
 }
