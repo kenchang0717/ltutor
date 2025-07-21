@@ -71,6 +71,20 @@ class PointModel extends Model
         }
     }
 
+    public function checkBonusExist(int $uid,string $description,string $start,string $end)
+    {
+        $data = $this->select('user_users.id,user_points_transactions.points')
+                    ->join('user_users', 'user_users.id = user_points_transactions.user_id', 'left')
+                    ->where('user_points_transactions.operation','ADD')
+                    ->where('user_points_transactions.transaction_type','SYSTEM')
+                    ->where('user_users.id', $uid)
+                    ->where('user_points_transactions.description', $description)
+                    ->where("CONVERT_TZ(user_points_transactions.created_at, '+00:00', '+08:00') >=", $start)
+                    ->where("CONVERT_TZ(user_points_transactions.created_at, '+00:00', '+08:00') <=", $end)
+                    ->findAll();
+                  
+        return $data;
+    }
 }
 
 ?>

@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\UserModel;
+use App\Models\PointModel;
 use DateTime;
 use DateTimeZone;
 use App\Libraries\RedisLibrary;
@@ -110,51 +111,31 @@ class Point extends BaseController {
 
     public function getBonusInfo()
     {
-        $uid = $GLOBALS['uid'];       
-        $userModel = new UserModel();
-        $userInfo = $userModel->getUserInfo($uid);
+        $uid = 87;       
 
-        if (date('w') >= 4) {
-            $lastThursday = date('Y-m-d', strtotime('1 thursday ago'));
-        }else{
-            $lastThursday = date('Y-m-d', strtotime('last thursday'));
-        }
-
-        $redis = new RedisLibrary();
-        $time = $this->getActionDate();
-        $num=0;
+        $time = $this->getBonusDate();
         foreach($time as $k => $v){
-            if($num == 0)
-                $week=99;
-            else
-                $week=$num;
+            $uget[$k] = 0;
+            $sget[$k] = 0;
+            $slv[$k] = 0;
 
-            $uget[$week] = 0;
-            $sget[$week] = 0;
-            $slv[$week] = 0;
-            if(date('Y-m-d', strtotime($v['start'])) == $lastThursday){//找出在活動七周內的時間
-                $ures = $redis->get('getExtraBonusByUser:'.$lastThursday);
-                $uinfo = json_decode($ures,true);
-                if(!empty($uinfo['record'])){
-                    foreach($uinfo['record'] as $k => $v){
-                        if($v['user_id'] == $uid)//找出領取用戶比賽紅利用戶
-                            $uget[$week] = 1;
-                    }
-                }
-            
-                $sres = $redis->get('getExtraBonusBySchool'.$userInfo['school_name'].':'.$lastThursday);
-                $sinfo = json_decode($sres,true);
-                if(!empty($sinfo['record'])){
-                    foreach($sinfo['record'] as $k => $v){
-                        if($v['user_id'] == $uid){//找出領取學校比賽紅利用戶
-                            $sget[$week] = 1;
-                            $slv[$week] = $k+1;
-                        }
-                            
-                    }
-                }
+            $pointModel = new PointModel();
+            $userlExist = $pointModel->checkBonusExist($uid,'個人任務獎勵',$v['start'],$v['end']);
+            $schoolExist = $pointModel->checkBonusExist($uid,'學校任務獎勵',$v['start'],$v['end']);
+
+            if(count($userlExist)>0){
+                $uget[$k] = 1;
             }
-        $num++;    
+
+            if(count($schoolExist)>0){
+                $sget[$k] = 1;
+                if($schoolExist[0]['points']=='1000')
+                    $slv[$k] = 1;
+                elseif($schoolExist[0]['points']=='500')
+                    $slv[$k] = 2;
+                elseif($schoolExist[0]['points']=='100')
+                    $slv[$k] = 3;
+            }
         }
       
         $data = [
@@ -203,6 +184,47 @@ class Point extends BaseController {
                     $start = Time::parse($customStartDates[$num+1], $this->tz);
 
                 $end = Time::parse($start->toDateTimeString(), $this->tz)->addDays(6)->setTime(11, 59, 59);
+                $weeks = [
+                        'start' => $start->toDateTimeString(),
+                        'end'   => $end->toDateTimeString(),
+                    ];
+
+                return $weeks;    
+            } 
+    }
+
+    public function getBonusDate(int $num = 0)
+    {
+        $weeks = [];
+
+            $customStartDates = [
+                1 => '2025-07-16 12:00:00',
+                2 => '2025-07-23 12:00:00',
+                3 => '2025-07-30 12:00:00',
+                4 => '2025-08-06 12:00:00',
+                5 => '2025-08-13 12:00:00',
+                6 => '2025-08-20 12:00:00',
+                7 => '2025-08-27 12:00:00', 
+            ];
+
+            if($num==0){
+                foreach ($customStartDates as $weekNo => $startStr) {
+                    $start = Time::parse($startStr, $this->tz);
+                    $end = Time::parse($start->toDateTimeString(), $this->tz)->addDays(1)->setTime(11, 59, 59);
+
+                    $weeks[] = [
+                        // 'week'     => $weekNo,
+                        // 'start'    => $start,
+                        // 'end'      => $end,
+                        'start' => $start->toDateTimeString(),
+                        'end'   => $end->toDateTimeString(),
+                    ];
+                }
+
+                return $weeks;
+            }else{
+                $start = Time::parse($customStartDates[$num], $this->tz);
+                $end = Time::parse($start->toDateTimeString(), $this->tz)->addDays(1)->setTime(11, 59, 59);
                 $weeks = [
                         'start' => $start->toDateTimeString(),
                         'end'   => $end->toDateTimeString(),

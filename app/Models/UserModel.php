@@ -14,7 +14,7 @@ class UserModel extends Model
 
     public function getBonusBySchoolByWeek(string $school,string $startStr,string $endStr)
     {
-        $data = $this->select('user_users.school_name,SUM(user_points_transactions.point) AS BONUS')
+        $data = $this->select('user_users.school_name,SUM(user_points_transactions.points) AS BONUS')
                     ->join('user_points_transactions', 'user_users.id = user_points_transactions.user_id', 'left')
                     ->where('user_points_transactions.operation','ADD')
                     ->where('user_points_transactions.transaction_type','TASK')
@@ -29,7 +29,7 @@ class UserModel extends Model
 
     public function getBonusByUserByWeek(int $uid,string $startStr,string $endStr)
     {
-        $data = $this->select('SUM(user_points_transactions.point) AS BONUS')
+        $data = $this->select('user_users.id,SUM(user_points_transactions.points) AS BONUS')
                     ->join('user_points_transactions', 'user_users.id = user_points_transactions.user_id', 'left')
                     ->where('user_points_transactions.operation','ADD')
                     ->where('user_points_transactions.transaction_type','TASK')
@@ -97,6 +97,17 @@ class UserModel extends Model
                     ->select('school_name')
                     ->where('school_name !=', '')
                     ->findAll();
+        return $data;
+    }
+
+    public function getUidBySchool(string $school)
+    {
+        $res = $this->select('id')
+                    ->where('school_name', $school)
+                    ->findAll();
+
+        $data = array_column($res, 'id');
+
         return $data;
     }
 }
