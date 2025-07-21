@@ -110,8 +110,25 @@ class Task extends BaseController {
     public function getExtraBonusByUser()
     {
         $date = $this->getLastWeekBetweenDate();
+        $Bdate = $this->getLastWeekBonusDate();
+
         $pointModel = new PointModel();
-        $data =$pointModel->select('user_id,SUM(points) AS BONUS')
+        foreach($Bdate as $k => $v){
+            if(date('Y-m-d H:i:s')<=$v['start']){
+                $ExistData = $pointModel->select('*')
+                        ->where('operation','ADD')
+                        ->where('transaction_type','SYSTEM')
+                        ->where('description','個人任務獎勵')
+                        ->where("CONVERT_TZ(created_at, '+00:00', '+08:00') >=", $Bdate[$k-1]['start'])
+                        ->where("CONVERT_TZ(created_at, '+00:00', '+08:00') <=", $Bdate[$k-1]['end'])
+                        ->findAll();
+                if(count($ExistData)>0)
+                    return 'already push bonus';
+                break;        
+            }
+        }
+
+        $data = $pointModel->select('user_id,SUM(points) AS BONUS')
                     ->where('operation','ADD')
                     ->where('transaction_type','TASK')
                     ->where("CONVERT_TZ(created_at, '+00:00', '+08:00') >=", $date['start'])
@@ -129,6 +146,8 @@ class Task extends BaseController {
 
         $redis = new RedisLibrary();
         $redis->set('getExtraBonusByUser:'.date('Y-m-d',strtotime($date['start'])), json_encode($all),3600*24*30*2);
+
+
 
         $usernotificationsModel = new UserNotificationsModel();
         $notifications['title']='恭喜完成個人組任務挑戰，已成功領取獎勵紅利！';
@@ -151,6 +170,23 @@ class Task extends BaseController {
         $record = $redis->get('getBonusBySchoolLastWeek');
         if(empty($record))
             return 'no data';
+
+        $Bdate = $this->getLastWeekBonusDate();    
+        $pointModel = new PointModel();
+        foreach($Bdate as $k => $v){
+            if(date('Y-m-d H:i:s')<=$v['start']){
+                $ExistData = $pointModel->select('*')
+                        ->where('operation','ADD')
+                        ->where('transaction_type','SYSTEM')
+                        ->where('description','學校任務獎勵')
+                        ->where("CONVERT_TZ(created_at, '+00:00', '+08:00') >=", $Bdate[$k-1]['start'])
+                        ->where("CONVERT_TZ(created_at, '+00:00', '+08:00') <=", $Bdate[$k-1]['end'])
+                        ->findAll();
+                if(count($ExistData)>0)
+                    return 'already push bonus';
+                break;        
+            }
+        }
 
         $data = json_decode($record , true);
 
@@ -239,6 +275,36 @@ class Task extends BaseController {
         return $date;
     }
 
+    public function getLastWeekBonusDate()
+    {
+        $weeks = [];
+
+            $customStartDates = [
+                1 => '2025-07-16 12:00:00',
+                2 => '2025-07-23 12:00:00',
+                3 => '2025-07-30 12:00:00',
+                4 => '2025-08-06 12:00:00',
+                5 => '2025-08-13 12:00:00',
+                6 => '2025-08-20 12:00:00',
+                7 => '2025-08-27 12:00:00', 
+            ];
+
+            foreach ($customStartDates as $weekNo => $startStr) {
+                    $start = Time::parse($startStr, $this->tz);
+                    $end = Time::parse($start->toDateTimeString(), $this->tz)->addDays(7)->setTime(11, 59, 59);
+
+                    $weeks[] = [
+                        // 'week'     => $weekNo,
+                        // 'start'    => $start,
+                        // 'end'      => $end,
+                        'start' => $start->toDateTimeString(),
+                        'end'   => $end->toDateTimeString(),
+                    ];
+                }
+
+        return $weeks;
+    }
+
     public function test(){
         $now = Time::now($this->tz);
 
@@ -247,5 +313,4 @@ class Task extends BaseController {
 
         return 'success';
     }
-
 }

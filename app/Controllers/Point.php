@@ -111,7 +111,7 @@ class Point extends BaseController {
 
     public function getBonusInfo()
     {
-        $uid = 87;       
+        $uid = $GLOBALS['uid'];
 
         $time = $this->getBonusDate();
         foreach($time as $k => $v){
@@ -210,7 +210,7 @@ class Point extends BaseController {
             if($num==0){
                 foreach ($customStartDates as $weekNo => $startStr) {
                     $start = Time::parse($startStr, $this->tz);
-                    $end = Time::parse($start->toDateTimeString(), $this->tz)->addDays(1)->setTime(11, 59, 59);
+                    $end = Time::parse($start->toDateTimeString(), $this->tz)->addDays(7)->setTime(11, 59, 59);
 
                     $weeks[] = [
                         // 'week'     => $weekNo,
@@ -224,7 +224,7 @@ class Point extends BaseController {
                 return $weeks;
             }else{
                 $start = Time::parse($customStartDates[$num], $this->tz);
-                $end = Time::parse($start->toDateTimeString(), $this->tz)->addDays(1)->setTime(11, 59, 59);
+                $end = Time::parse($start->toDateTimeString(), $this->tz)->addDays(7)->setTime(11, 59, 59);
                 $weeks = [
                         'start' => $start->toDateTimeString(),
                         'end'   => $end->toDateTimeString(),
