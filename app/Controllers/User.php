@@ -152,7 +152,19 @@ class User extends BaseController {
     {
         $data = explode(",", $_REQUEST['ids']);
         $notifications['title']='系統調整通知';
-        $notifications['content']='親愛的同學 ，您好：\n\n    非常感謝您參與本次Lucky7紅利提款機校際活動！\n\n\n    因系統異常，導致部分帳號誤發放 1,000 點獎勵紅利。經技術團隊確認後，已進行回收處理，造成您的困擾，我們深感抱歉，敬請見諒。\n\n\n    LTrust學習平台將持續優化系統，並確保活動機制公平、穩定，感謝您的理解與支持！   \n\n\n\n';
+        $notifications['content']='親愛的同學 ，您好：
+
+        非常感謝您參與本次Lucky7紅利提款機校際活動！
+
+
+        因系統異常，導致部分帳號誤發放 1,000 點獎勵紅利。經技術團隊確認後，已進行回收處理，造成您的困擾，我們深感抱歉，敬請見諒。
+
+
+        LTrust學習平台將持續優化系統，並確保活動機制公平、穩定，感謝您的理解與支持！
+
+        
+        
+        ';
         $notifications['name']='task_achievement_claim_reward_back';
         $usernotificationsModel = new UserNotificationsModel();
 
