@@ -113,16 +113,18 @@ class Task extends BaseController {
         $Bdate = $this->getLastWeekBonusDate();
 
         $pointModel = new PointModel();
+        $redis = new RedisLibrary();
         foreach($Bdate as $k => $v){
             if(date('Y-m-d H:i:s')<=$v['start']){
-                $ExistData = $pointModel->select('*')
-                        ->where('operation','ADD')
-                        ->where('transaction_type','SYSTEM')
-                        ->where('description','個人任務獎勵')
-                        ->where("CONVERT_TZ(created_at, '+00:00', '+08:00') >=", $Bdate[$k-1]['start'])
-                        ->where("CONVERT_TZ(created_at, '+00:00', '+08:00') <=", $Bdate[$k-1]['end'])
-                        ->findAll();
-                if(count($ExistData)>0)
+                // $ExistData = $pointModel->select('*')
+                //         ->where('operation','ADD')
+                //         ->where('transaction_type','SYSTEM')
+                //         ->where('description','個人任務獎勵')
+                //         ->where("CONVERT_TZ(created_at, '+00:00', '+08:00') >=", $Bdate[$k-1]['start'])
+                //         ->where("CONVERT_TZ(created_at, '+00:00', '+08:00') <=", $Bdate[$k-1]['end'])
+                //         ->findAll();
+                $ExistData = $redis->get('getExtraBonusByUser:'.date('Y-m-d',strtotime($Bdate[$k-2]['start'])));
+                if(!empty($ExistData))
                     return 'already push bonus';
                 break;        
             }
@@ -175,14 +177,15 @@ class Task extends BaseController {
         $pointModel = new PointModel();
         foreach($Bdate as $k => $v){
             if(date('Y-m-d H:i:s')<=$v['start']){
-                $ExistData = $pointModel->select('*')
-                        ->where('operation','ADD')
-                        ->where('transaction_type','SYSTEM')
-                        ->where('description','學校任務獎勵')
-                        ->where("CONVERT_TZ(created_at, '+00:00', '+08:00') >=", $Bdate[$k-1]['start'])
-                        ->where("CONVERT_TZ(created_at, '+00:00', '+08:00') <=", $Bdate[$k-1]['end'])
-                        ->findAll();
-                if(count($ExistData)>0)
+                // $ExistData = $pointModel->select('*')
+                //         ->where('operation','ADD')
+                //         ->where('transaction_type','SYSTEM')
+                //         ->where('description','學校任務獎勵')
+                //         ->where("CONVERT_TZ(created_at, '+00:00', '+08:00') >=", $Bdate[$k-1]['start'])
+                //         ->where("CONVERT_TZ(created_at, '+00:00', '+08:00') <=", $Bdate[$k-1]['end'])
+                //         ->findAll();
+                $ExistData = $redis->get('getExtraBonusBySchool:'.date('Y-m-d',strtotime($Bdate[$k-2]['start'])));
+                if(!empty($ExistData))
                     return 'already push bonus';
                 break;        
             }
@@ -280,13 +283,14 @@ class Task extends BaseController {
         $weeks = [];
 
             $customStartDates = [
-                1 => '2025-07-16 12:00:00',
-                2 => '2025-07-23 12:00:00',
-                3 => '2025-07-30 12:00:00',
-                4 => '2025-08-06 12:00:00',
-                5 => '2025-08-13 12:00:00',
-                6 => '2025-08-20 12:00:00',
-                7 => '2025-08-27 12:00:00', 
+                1 => '2025-07-10 12:00:00',
+                2 => '2025-07-17 12:00:00',
+                3 => '2025-07-24 12:00:00',
+                4 => '2025-07-31 12:00:00',
+                5 => '2025-08-07 12:00:00',
+                6 => '2025-08-14 12:00:00',
+                7 => '2025-08-21 12:00:00',
+                8 => '2025-08-27 12:00:00', 
             ];
 
             foreach ($customStartDates as $weekNo => $startStr) {
