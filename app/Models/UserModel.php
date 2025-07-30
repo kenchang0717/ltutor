@@ -110,6 +110,18 @@ class UserModel extends Model
 
         return $data;
     }
+
+    public function getUserInfoByEmail(string $email)
+    {
+        $data = $this->select('*')
+                    ->where('email', $email)
+                    ->find();
+        
+        if(count($data)!=0)
+            return $data[0];
+        else
+            return 0;            
+    }
 }
 
 ?>

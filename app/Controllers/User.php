@@ -2,8 +2,10 @@
 namespace App\Controllers;
 
 use App\Models\UserModel;
+use App\Models\UserPsychologicalModel;
 use App\Models\UserNotificationsModel;
 use App\Libraries\JwtLibrary;
+use PhpOffice\PhpSpreadsheet\IOFactory;
 use App\Libraries\RedisLibrary;
 
 class User extends BaseController {
@@ -100,6 +102,55 @@ class User extends BaseController {
 
         header("Refresh: 3; url=$url");
         exit;
+    }
+
+    public function readExcel()
+    {
+        $file = $this->request->getFile('excel');
+
+        if (!$file->isValid()) {
+            return '檔案無效';
+        }
+
+        // 讀取 Excel 檔案
+        $spreadsheet = IOFactory::load($file->getTempName());
+        $sheet = $spreadsheet->getActiveSheet();
+        $data = $sheet->toArray(); // 轉成陣列格式
+
+        $userModel = new UserModel();
+        $userPsychologicalModel = new UserPsychologicalModel();
+        $usernotificationsModel = new UserNotificationsModel();
+        foreach($data as $k => $v){    
+            $res = $userPsychologicalModel->checkEmailExist($v[2]);
+            if($res!=null){
+                $info = $userModel->getUserInfoByEmail($res);
+            if($info != 0){
+                $userPsychologicalModel->add($info['id'],$res,1);
+                $res = $userModel->updateBonus($info['id'],3000,$info['bonus_points']);
+                $res='success';
+                if($res == 'success'){
+                    $notifications['title']='心理測驗活動獎勵';
+                    $notifications['content']='親愛的同學 ，您好：
+
+                    感謝您參加本次 LTrust 所推出的「你是哪種學習型人格」心理測驗活動！
+
+                    您已完成 email 登記，我們已為您發送 3000 點紅利至帳戶中。
+
+                    紅利可用於兌換 LTrust 上的各項學習服務，目前 S.E.N.S.E.I 解題教練問到飽 正在進行中，同學不要害羞，免費期間盡量用起來！
+
+                    此外，平台也同步舉辦「紅利提款機挑戰賽」，可以再LTrust首頁BANNER上找到「Lucky7 紅利提款機大賽」的活動喔！天天完成任務還能額外賺紅利，快來看看吧💰
+
+                    ';
+                    $notifications['user_id']=$info['id'];
+                    $usernotificationsModel->add($notifications);
+                    }              
+                } 
+                else{
+                    $userPsychologicalModel->add($info['id'],$res,0);
+                }
+            }  
+        }
+        return 'success';
     }
 
     public function getSchoolList()
