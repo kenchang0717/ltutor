@@ -111,8 +111,7 @@ class Point extends BaseController {
 
     public function getBonusInfo()
     {
-        $uid = $GLOBALS['uid'];
-
+        $uid = $GLOBALS['uid'];    
         $time = $this->getBonusDate();
         foreach($time as $k => $v){
             $uget[$k] = 0;

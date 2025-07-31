@@ -130,7 +130,7 @@ class Task extends BaseController {
             }
         }
 
-        $data = $pointModel->select('user_id,SUM(points) AS BONUS')
+        $data =$pointModel->select('user_id,SUM(points) AS BONUS')
                     ->where('operation','ADD')
                     ->where('transaction_type','TASK')
                     ->where("CONVERT_TZ(created_at, '+00:00', '+08:00') >=", $date['start'])
@@ -148,8 +148,6 @@ class Task extends BaseController {
 
         $redis = new RedisLibrary();
         $redis->set('getExtraBonusByUser:'.date('Y-m-d',strtotime($date['start'])), json_encode($all),3600*24*30*2);
-
-
 
         $usernotificationsModel = new UserNotificationsModel();
         $notifications['title']='恭喜完成個人組任務挑戰，已成功領取獎勵紅利！';
@@ -308,7 +306,7 @@ class Task extends BaseController {
 
         return $weeks;
     }
-
+    
     public function test(){
         $now = Time::now($this->tz);
 
@@ -317,4 +315,5 @@ class Task extends BaseController {
 
         return 'success';
     }
+
 }

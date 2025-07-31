@@ -29,7 +29,7 @@ class UserModel extends Model
 
     public function getBonusByUserByWeek(int $uid,string $startStr,string $endStr)
     {
-        $data = $this->select('user_users.id,SUM(user_points_transactions.points) AS BONUS')
+        $data = $this->select('SUM(user_points_transactions.points) AS BONUS')
                     ->join('user_points_transactions', 'user_users.id = user_points_transactions.user_id', 'left')
                     ->where('user_points_transactions.operation','ADD')
                     ->where('user_points_transactions.transaction_type','TASK')

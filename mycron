@@ -1,0 +1,6 @@
+0 4 * * *  root /usr/bin/curl https://25bta.ltrust.tw/api/task/getBonusBySchoolLastWeek >> /var/log/getBonusBySchoolLastWeek.log 2>&1
+0 4 * * *  root /usr/bin/curl https://25bta.ltrust.tw/api/task/getBonusBySchoolNow >> /var/log/getBonusBySchoolNow.log 2>&1
+0 0 * * 4  root /usr/bin/curl https://25bta.ltrust.tw/api/task/getExtraBonusByUser >> /var/log/getExtraBonusByUser.log 2>&1
+0 0 * * 4  root /usr/bin/curl https://25bta.ltrust.tw/api/task/getExtraBonusBySchool >> /var/log/getExtraBonusBySchool.log 2>&1
+0 4 * * *  root /usr/bin/curl https://25bta.ltrust.tw/api/task/test >> /var/log/test.log 2>&1
+
