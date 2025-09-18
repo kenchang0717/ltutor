@@ -15,6 +15,7 @@ $routes->get('getSchoolList', 'User::getSchoolList');
 $routes->post('getToken', 'User::getToken');
 $routes->post('sendMessage', 'User::sendMessage');
 $routes->post('readExcel', 'User::readExcel');
+$routes->post('readExcelRegister', 'User::readExcelRegister');
 
 $routes->get('point/getNewRecord', 'Point::getNewRecord');
 $routes->get('point/getLastWeekRecord', 'Point::getLastWeekRecord');

@@ -27,8 +27,10 @@ class UserPsychologicalModel extends Model
 
     public function checkEmailExist(string $email)
     {
+        $today = date('Y-m-d'); // 今天日期 (不含時間)
         $data = $this->select('*')
                     ->where('email', $email)
+                    ->where('DATE(created_at)', $today) // 檢查 created_at 是否為今天
                     ->find();
 
         if(count($data)==0)

@@ -205,10 +205,9 @@ class User extends BaseController {
             if($res!=null){
                 $info = $userModel->getUserInfoByEmail($res);
             if($info != 0){
-                $userPsychologicalModel->add($info['id'],$res,1);
-                $res = $userModel->updateBonus($info['id'],3000,$info['bonus_points']);
-                $res='success';
-                if($res == 'success'){
+                $userPsychologicalModel->add($info['id'],$v[2],1);
+                $pointsRes = $userModel->updateBonus($info['id'],3000,$info['bonus_points']);
+                if($pointsRes == 'success'){
                     $notifications['title']='心理測驗活動獎勵';
                     $notifications['content']='親愛的同學 ，您好：
 
@@ -226,9 +225,64 @@ class User extends BaseController {
                     }              
                 } 
                 else{
-                    $userPsychologicalModel->add($info['id'],$res,0);
+                    $userPsychologicalModel->add(0,$v[2],0);
                 }
             }  
+        }
+        return $this->response->setJSON(['success' => true]);
+    }
+
+        public function readExcelRegister()
+    {
+        $file = $this->request->getFile('excel');
+
+        if (!$file->isValid()) {
+            return $this->response->setJSON(['success' => false, 'message' => '檔案無效']);
+        }
+
+        // 讀取 Excel 檔案
+        $spreadsheet = IOFactory::load($file->getTempName());
+        $sheet = $spreadsheet->getActiveSheet();
+        $data = $sheet->toArray(); // 轉成陣列格式
+
+        $userModel = new UserModel();
+        $userPsychologicalModel = new UserPsychologicalModel();
+        $usernotificationsModel = new UserNotificationsModel();
+        foreach($data as $k => $v){
+            if ($k === 0) continue;
+
+            // 確保 Email 存在
+            if (!isset($v[2]) || !filter_var($v[2], FILTER_VALIDATE_EMAIL)) {
+                continue;
+            }
+
+            $res = $userPsychologicalModel->checkEmailExist($v[2]);
+            if($res!=null){
+                $info = $userModel->getUserInfoByEmail($res);
+            if($info != 0){
+                $userPsychologicalModel->add($info['id'],$v[2],1);
+                $pointsRes = $userModel->updateBonus($info['id'],100,$info['bonus_points']);
+                if($pointsRes == 'success'){
+                    $notifications['title']='叫我註冊王email活動獎勵';
+                    $notifications['content']='親愛的同學 ，您好：
+
+                    叮咚～龍騰高中聲 LINE 推播好禮來囉！🎉
+
+                    恭喜同學獲得 100 紅利！
+
+                    這 100 紅利可用於購買「叫我註冊王」活動推薦碼，邀請同學一起註冊 LTrust！邀請越多朋友註冊完成，就有機會獲得最高 新台幣 3,000 元獎金。天大好機會不要錯過啦！
+
+                    想知道更多「叫我註冊王」活動資訊 👉 https://cmrk.ltrust.tw/
+
+                    ';
+                    $notifications['user_id']=$info['id'];
+                    $usernotificationsModel->add($notifications);
+                    }              
+                } 
+                else{
+                    $userPsychologicalModel->add(0,$v[2],0);
+                }
+            }
         }
         return $this->response->setJSON(['success' => true]);
     }
