@@ -85,6 +85,45 @@ class PointModel extends Model
                   
         return $data;
     }
+
+    public function addRegisterBonusLog(int $uid,int $bonus,int $before)
+    {
+        $db = Database::connect();
+
+        // 啟動
+        $db->transBegin();
+        try {
+            $data = [
+            'user_id' => $uid, 
+            'points'  => $bonus, 
+            'before_points'  => $before, 
+            'after_points'  => $before + $bonus, 
+            'point_balance'  => $before + $bonus, 
+            'type'  => 'BONUS', 
+            'transaction_type'  => 'SYSTEM', 
+            'operation'  => 'ADD',
+            'title'  => '叫我註冊王email活動獎勵',
+            'description'  => '活動獎勵',
+            'success'  => 1,
+            'created_at'  => Time::now('UTC')->toDateTimeString(),
+            'updated_at'  => Time::now('UTC')->toDateTimeString(),
+            ];
+
+            $this->insert($data);
+            // 沒錯誤就提交
+            if ($db->transStatus() === false) {
+                $db->transRollback();
+                return "Error";
+            } else {
+                $db->transCommit();
+                return "success";
+            }
+        }catch (\Exception $e) {
+            // 發生例外錯誤，Rollback
+            $db->transRollback();
+            return "Error：" . $e->getMessage();
+        }
+    }
 }
 
 ?>

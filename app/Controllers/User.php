@@ -1,6 +1,7 @@
 <?php
 namespace App\Controllers;
 
+use App\Models\PointModel;
 use App\Models\UserModel;
 use App\Models\UserPsychologicalModel;
 use App\Models\UserNotificationsModel;
@@ -285,5 +286,21 @@ class User extends BaseController {
             }
         }
         return $this->response->setJSON(['success' => true]);
+    }
+
+    public function supplyLog()
+    {
+        
+        $userPsychologicalModel = new UserPsychologicalModel();
+        $res = $userPsychologicalModel->getLog('2025-09-18');
+
+        $userModel = new UserModel();
+        $pointModel = new PointModel();
+        foreach($res as $k => $v){
+            $info = $userModel->getUserInfo($v['uid']);
+            $before = $info['bonus_points']-100;
+            $pointModel->addRegisterBonusLog($v['uid'],100,$before);
+        }
+        return 'success';
     }
 }

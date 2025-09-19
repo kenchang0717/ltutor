@@ -36,6 +36,17 @@ class UserPsychologicalModel extends Model
         if(count($data)==0)
             return $email;
     }
+
+        public function getLog(string $date)
+    {
+        // $date 格式假設是 '2025-09-18'
+        $data = $this->select('*')
+                    ->where('DATE(created_at)', $date) // 抓指定日期的資料
+                    ->where('is_register', 1)
+                    ->find();
+
+        return $data;
+    }
 }
 
 ?>
