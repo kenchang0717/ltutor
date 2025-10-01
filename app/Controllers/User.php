@@ -264,7 +264,7 @@ class User extends BaseController {
                 $userPsychologicalModel->add($info['id'],$v[2],1);
                 $pointsRes = $userModel->updateBonus($info['id'],100,$info['bonus_points']);
                 if($pointsRes == 'success'){
-                    $notifications['title']='叫我註冊王email活動獎勵';
+                    $notifications['title']='叫我註冊王_2_email活動獎勵';
                     $notifications['content']='親愛的同學 ，您好：
 
                     叮咚～龍騰高中聲 LINE 推播好禮來囉！🎉
@@ -292,7 +292,7 @@ class User extends BaseController {
     {
         
         $userPsychologicalModel = new UserPsychologicalModel();
-        $res = $userPsychologicalModel->getLog('2025-09-18');
+        $res = $userPsychologicalModel->getLog('2025-10-01');
 
         $userModel = new UserModel();
         $pointModel = new PointModel();
