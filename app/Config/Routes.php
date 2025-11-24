@@ -16,6 +16,7 @@ $routes->post('getToken', 'User::getToken');
 $routes->post('sendMessage', 'User::sendMessage');
 $routes->post('readExcel', 'User::readExcel');
 $routes->post('readExcelRegister', 'User::readExcelRegister');
+$routes->post('readExcelSend', 'User::readExcelSend');
 $routes->post('supplyLog', 'User::supplyLog');
 
 $routes->get('point/getNewRecord', 'Point::getNewRecord');

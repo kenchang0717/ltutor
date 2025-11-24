@@ -154,50 +154,16 @@ class User extends BaseController {
     public function sendMessage()
     {
         $data = explode(",", $_REQUEST['ids']);
-        $notifications['title']='【叫我註冊王】活動通知';
-        if($_REQUEST['content']==1){
-            $notifications['content']='叮咚🔔
+        $notifications['title']='紅利補償';
+            $notifications['content']='親愛的會員 您好😊
 
-                最近有一些同學手上的推薦碼還留著沒用～
-
-                如果再多邀請幾位註冊，成績就能更完整，名次也會更往前啦！
-
-                👉 一起加油，把手上的推薦碼都用起來，說不定能衝出更亮眼的表現喔！
-
-                對了，第一次段考也將至，提醒如果遇到不懂的題目可以問 S.E.N.S.E.I、想要刷題可以使用 Qbot 喔！
-
-        ';
-        }else if($_REQUEST['content']==2){
-            $notifications['content']='叮咚🔔
+            平台於10/25~10/28期間超商繳費異常，造成您的點數延遲發放，我們感到非常抱歉😫
             
-            好多同學們已經完成第一組邀約註冊，真的很棒👏是一個好的開始呢！
-
-            接下來如果再多邀請幾位，成果會更加驚喜，前五名邀約還有高額獎學金喔！
-            
-            提醒同學們，本活動最終僅取前 10 名。若出現相同邀約人數，將依「最早完成邀約註冊時間」排序，優先者獲得名次喔。
-
-            👉 保持這股動力，一起往前衝，加油！
+            目前已修復完成且完成點數發放，平台特別提供您購買點數 30% 的紅利作為補償，感謝您的耐心與支持 ! 
 
         ';
-        }else if($_REQUEST['content']==3){
-            $notifications['content']='叮咚🔔
-
-            有些同學買了一組推薦碼，但還沒開始邀請～
-
-            已經很不錯，有好的開始，只是有點可惜，其實只要先邀請一位，後面就會慢慢累積成果哦，紅利與獎學金等你來拿！
-
-            如果還不知道怎麼邀約，歡迎到龍騰高中聲 IG 精選動態第 4 則看邀約流程喔：https://www.instagram.com/stories/highlights/18078465647000530/ 
-
-            如果還是不懂，歡迎私訊龍騰高中聲 Line@ 或是龍騰高中聲 IG 詢問小編喔！
-
-            👉 別擔心，第一步最重要，一起加油，踏出去就對了！
-
-            對了，第一次段考也將至，提醒如果遇到不懂的題目可以問 S.E.N.S.E.I、想要刷題可以使用 Qbot 喔！
-
-        ';
-        }
         
-        $notifications['name']='register_king_activity';
+        $notifications['name']='bonus_compensation';
         $usernotificationsModel = new UserNotificationsModel();
 
         foreach($data as $k => $v){
@@ -312,6 +278,71 @@ class User extends BaseController {
                 else{
                     $userPsychologicalModel->add(0,$v[2],0);
                 }
+            }
+        }
+        return $this->response->setJSON(['success' => true]);
+    }
+
+        public function readExcelSend()
+    {
+        $file = $this->request->getFile('excel');
+
+        if (!$file->isValid()) {
+            return $this->response->setJSON(['success' => false, 'message' => '檔案無效']);
+        }
+
+        // 讀取 Excel 檔案
+        $spreadsheet = IOFactory::load($file->getTempName());
+        $sheet = $spreadsheet->getActiveSheet();
+        $data = $sheet->toArray(); // 轉成陣列格式
+
+        $userModel = new UserModel();
+        $userPsychologicalModel = new UserPsychologicalModel();
+        $usernotificationsModel = new UserNotificationsModel();
+        foreach($data as $k => $v){var_dump($v[1]);
+            if ($k === 0) continue;
+
+            // 確保 Email 存在
+            if (!isset($v[1]) || !filter_var($v[1], FILTER_VALIDATE_EMAIL)) {
+                continue;var_dump($v[1]);var_dump("!!!!!!");
+            }
+
+            $res = $userPsychologicalModel->checkEmailExist($v[1]);
+            if($res!=null){
+                $info = $userModel->getUserInfoByEmail($res);
+            if($info != 0){
+                $userPsychologicalModel->add($info['id'],$v[1],1,'學測通行證通知');
+                $notifications['title']='【限時 33 折】國英數 210 題精選＋全科 Qbot 問到飽｜高三學測通行證開賣！';
+                    $notifications['content']='同學您好：
+
+                        學測進入倒數，最完整、最划算的備考組合 「高三專屬｜學測通行證」 已正式推出！
+
+                        我們把你在最後衝刺階段最需要的工具全部一次打包：
+
+                        ✔S.E.N.S.E.I 國英數精選題組（每科 70 題，共 210 題）
+
+                        拍題就能立即看到 清楚解析＋題型提醒，協助你補強基礎、掌握常錯題。
+
+                        ✔Qbot 全科刷題問到飽
+
+                        不限科目、不限冊次，想練就練，隨時保持手感不生鏽。
+
+                        原價加起來共 6,067 元，現在 限時 33 折，只要 1,980 元 就能一次擁有。
+                        ________________________________________
+                        Q：通行證在哪裡購買？
+
+                        A：登入後回首頁，右上角購物車旁的 【通】ICON 就能找到購買入口！
+                        ________________________________________
+                        有 AI 幫你拆題，有題庫陪你練熟，讓你在剩下的時間更有效率、更有方向。
+
+                        祝你備考順利，離目標大學再近一步。
+
+                        — LTrust 團隊
+
+                    ';
+                    $notifications['user_id']=$info['id'];
+                    $usernotificationsModel->add($notifications);
+                    }  
             }
         }
         return $this->response->setJSON(['success' => true]);

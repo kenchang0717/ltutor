@@ -12,12 +12,13 @@ class UserPsychologicalModel extends Model
     protected $allowedFields = ['uid','email','is_register','created_at']; // 可插入欄位
     // protected $useTimestamps = true;       // 如果表中有 created_at / updated_at 欄位
 
-    public function add(int $uid,string $email,int $is_register)
+    public function add(int $uid,string $email,int $is_register,string $activity='')
     {
         $data = [
             'uid'  => $uid,
             'email' => $email,
             'is_register' => $is_register,
+            'activity' => $activity,
             'created_at'  => Time::now('UTC')->toDateTimeString(),
         ];
 
